@@ -19,7 +19,7 @@ const Header = () => {
      data-aos-easing="linear"
      data-aos-duration="500" className="text-3xl md:text-4xl
         lg:text-5xl font-light m-0">
-            KCODE
+            KCODE.
         </h1>
 
         {/* Navigation Links */}

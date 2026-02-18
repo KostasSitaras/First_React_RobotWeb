@@ -29,7 +29,18 @@ const Hero = () => {
             tracking-wider my-8'>
                 Email for
                 <br />
-                Developers
+                Developers <span className="inline-block align-baseline">
+                    <Typewriter options={{
+                    strings: ['...','...','...'],
+                    autoStart: true,
+                    delay: 500,
+                    loop:true,
+                    cursor:'',
+                    deleteSpeed: 500,
+                } }  /></span>
+                
+                     
+                
             </h1>
             {/* Description  */}
             <p className='text-base sm:text-lg
