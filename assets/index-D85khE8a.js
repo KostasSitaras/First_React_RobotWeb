@@ -73,6 +73,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             transition-colors hover:text-gray-300 \r
             z-50`,href:"#",children:"HOME"}),_t.jsx("a",{className:`text-base tracking-wider\r
             transition-colors hover:text-gray-300 \r
-            z-50`,href:"#",children:"HOME"})]})})]})};function Zv(){return mm.useEffect(()=>{zv.init({duration:1500,once:!0})}),_t.jsxs("main",{children:[_t.jsx("img",{className:"absolute top-0 right-0 opacity-60 -z-10",src:"gradient.png",alt:"Grandient-img"}),_t.jsx("img",{className:"absolute bottom-40 left-0 opacity-60 -z-10",src:"gradient.png",alt:"Grandient-img"}),_t.jsx("div",{className:`h-0 w-[40rem] absolute top-[20%] right-[-5%] 
-  shadow-[0_0_900px_20px_#e99b63] -rotate-[30deg] -z-10`}),_t.jsx("div",{className:`h-0 w-[50rem] absolute top-[55%] left-[-10%] 
+            z-50`,href:"#",children:"HOME"})]})})]})};function Zv(){return mm.useEffect(()=>{zv.init({duration:1500,once:!0})}),_t.jsxs("main",{children:[_t.jsx("img",{className:"absolute top-0 right-0 opacity-60 -z-10",src:"gradient.png",alt:"Grandient-img"}),_t.jsx("img",{className:"absolute bottom-40 left-0 opacity-60 -z-10",src:"gradient.png",alt:"Grandient-img"}),_t.jsx("div",{className:`h-px w-[40rem] absolute top-[20%] right-[-5%] 
+  shadow-[0_0_900px_20px_#e99b63] -rotate-[30deg] -z-10`}),_t.jsx("div",{className:`h-px w-[50rem] absolute top-[55%] left-[-10%] 
   shadow-[0_0_900px_20px_#e99b63] -rotate-[-30deg] -z-10`}),_t.jsx(Xv,{}),_t.jsx(Qv,{})]})}lv.createRoot(document.getElementById("root")).render(_t.jsx(mm.StrictMode,{children:_t.jsx(Zv,{})}));
