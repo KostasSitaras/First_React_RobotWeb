@@ -37,11 +37,11 @@ const Hero = () => {
             </p>
             
             {/* Call to Action Button i dont know if i want to use it */}
-            <div>
+            {/*<div>
                 <a href="#">
 
                 </a>
-            </div>
+            </div>*/}
 
 
         </div>
