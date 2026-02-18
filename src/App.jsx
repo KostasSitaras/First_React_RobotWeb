@@ -21,11 +21,11 @@ export default function App() {
   src="gradient.png" alt="Grandient-img" />
 
   {/* Blur Effect Right */}
-  <div className="h-px w-[40rem] absolute top-[20%] right-[-5%] 
+  <div className="h-0 w-[40rem] absolute top-[20%] right-[-5%] 
   shadow-[0_0_900px_20px_#e99b63] -rotate-[30deg] -z-10" >
   </div>
   {/* Blur Effect Left */}
-  <div className="h-px w-[50rem] absolute top-[55%] left-[-10%] 
+  <div className="h-0 w-[50rem] absolute top-[55%] left-[-10%] 
   shadow-[0_0_900px_20px_#e99b63] -rotate-[-30deg] -z-10" >
   </div>
 
