@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white 
+    relative font-sans overflow-x-hidden
+    h-screen;
+  }
+}
