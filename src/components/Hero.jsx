@@ -1,4 +1,6 @@
 import 'boxicons/css/boxicons.min.css';
+import { stringify } from 'postcss';
+import Typewriter from 'typewriter-effect';
 
 const Hero = () => {
   return (
@@ -33,11 +35,16 @@ const Hero = () => {
             <p className='text-base sm:text-lg
             tracking-wider text-gray-400 max-w-[25rem]
             lg:max-w-[30rem]'>
-                πρεπει να κατσω να γραψω κατι για το τι κανει η εφαρμογη αλλα δεν ξερω τι ακριβως να γραψω
+                <Typewriter options={{
+                    strings: ['My name is Kostas','I am trying to learn React','Thanks for Joining!'],
+                    autoStart: true,
+                    loop:true,
+                    cursor:'_',
+                } }  />
             </p>
             
             {/* Call to Action Button i dont know if i want to use it */}
-            {/*<div>
+             {/*{/<div>
                 <a href="#">
 
                 </a>

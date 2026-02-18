@@ -13,7 +13,7 @@ export default function App() {
   return (
  <main>
   {/* Gradient Image */}
-  <img className="absolute top-0 right-0 opacity-80 -z-1" 
+  <img className="absolute top-0 right-0 opacity-60 -z-10" 
   src="gradient.png" alt="Grandient-img" />
 
   {/* Blur Effect */}
