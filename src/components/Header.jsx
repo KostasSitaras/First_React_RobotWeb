@@ -12,12 +12,22 @@ const Header = () => {
             mobileMenu.classList.add('hidden');
         }
     }
+
+    // Function to handle CV download
+    const downloadCV = () => {
+  const link = document.createElement("a");
+  link.href = "/Sitaras_Konstantinos_CV_en.pdf";
+  link.download = "Sitaras_Konstantinos_CV_en.pdf";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+};
   return (
     <header className="flex justify-between 
     items-center py-4 px-4 lg:px-20">
         <h1 data-aos="fade-down"
      data-aos-easing="linear"
-     data-aos-duration="500" className="text-3xl md:text-4xl
+     data-aos-duration="500" className="text-3xl md:text-4xl transition-colors hover:text-gray-300
         lg:text-5xl font-light m-0">
             KCODE.
         </h1>
@@ -38,7 +48,7 @@ const Header = () => {
      data-aos-duration="1500" className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                HOME
+                Cooming Soon
                 
             </a>
 
@@ -47,7 +57,7 @@ const Header = () => {
      data-aos-duration="2000"className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                HOME
+                Cooming Soon
                 
             </a>
 
@@ -56,7 +66,7 @@ const Header = () => {
      data-aos-duration="2500"className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                HOME
+                Cooming Soon
                 
             </a>
 
@@ -65,11 +75,12 @@ const Header = () => {
         </nav>
 
         {/* Web Button  */}
-        <button className="hidden md:block bg-
+        <button onClick={downloadCV} className="hidden md:block bg-
         [#a7a7a7] text-white py-3 px-8 rounded-full
         border-none font-medium transition-all 
         duration-500 hover:bg-white hover:text-black cursor-pointer
         z-50">
+            
             Download CV
         </button>
 
@@ -83,9 +94,10 @@ const Header = () => {
         md:hidden z-40 bg-black bg-opacity-70
         backdrop-blur- md' >
             <nav className='flex flex-col items-center gap-6' >
-                <a className="text-base tracking-wider
+                <a  className="text-base tracking-wider
             transition-colors hover:text-gray-300 
-            z-50" href="#">
+            z-50" href="#"
+            >
                 HOME
                 
             </a>
@@ -93,21 +105,21 @@ const Header = () => {
             <a className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                HOME
+                Cooming Soon
                 
             </a>
 
             <a className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                HOME
+                Cooming Soon
                 
             </a>
 
             <a className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                HOME
+                Cooming Soon
                 
             </a> 
             </nav>
