@@ -48,7 +48,7 @@ const Header = () => {
      data-aos-duration="1500" className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                Cooming Soon
+                Coming Soon
                 
             </a>
 
@@ -57,7 +57,7 @@ const Header = () => {
      data-aos-duration="2000"className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                Cooming Soon
+                Coming Soon
                 
             </a>
 
@@ -66,7 +66,7 @@ const Header = () => {
      data-aos-duration="2500"className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                Cooming Soon
+                Coming Soon
                 
             </a>
 
@@ -105,23 +105,29 @@ const Header = () => {
             <a className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                Cooming Soon
+                Coming Soon
                 
             </a>
 
             <a className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                Cooming Soon
+                Coming Soon
                 
             </a>
 
             <a className="text-base tracking-wider
             transition-colors hover:text-gray-300 
             z-50" href="#">
-                Cooming Soon
+                Coming Soon
                 
             </a> 
+            <a className="text-base tracking-wider
+            transition-colors hover:text-gray-300 
+            z-50" href="/Sitaras_Konstantinos_CV_en.pdf" download>
+                Download CV
+                
+            </a>
             </nav>
         </div>
 
