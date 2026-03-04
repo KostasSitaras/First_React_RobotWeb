@@ -1,4 +1,5 @@
 import 'boxicons/css/boxicons.min.css';
+import { Link } from "react-router-dom";
 
 const Header = () => {
     //simple toggle function for mobile menu
@@ -28,7 +29,7 @@ const Header = () => {
         <h1 data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="500" className="text-3xl md:text-4xl transition-colors hover:text-gray-300
-        lg:text-5xl font-light m-0">
+        lg:text-5xl font-light m-0 ">
             KCODE.
         </h1>
 
@@ -38,8 +39,8 @@ const Header = () => {
      data-aos-easing="linear"
      data-aos-duration="1000" className="text-base tracking-wider
             transition-colors hover:text-gray-300 
-            z-50" href="#">
-                HOME
+            z-50" >
+                <Link to="/">Home</Link>
                 
             </a>
 
@@ -47,8 +48,9 @@ const Header = () => {
      data-aos-easing="linear"
      data-aos-duration="1500" className="text-base tracking-wider
             transition-colors hover:text-gray-300 
-            z-50" href="#">
-                Coming Soon
+            z-50">
+                <Link to="/about">About</Link>
+                
                 
             </a>
 
@@ -56,8 +58,8 @@ const Header = () => {
      data-aos-easing="linear"
      data-aos-duration="2000"className="text-base tracking-wider
             transition-colors hover:text-gray-300 
-            z-50" href="#">
-                Coming Soon
+            z-50">
+                <Link to="/projects">Projects</Link>
                 
             </a>
 
@@ -65,8 +67,8 @@ const Header = () => {
      data-aos-easing="linear"
      data-aos-duration="2500"className="text-base tracking-wider
             transition-colors hover:text-gray-300 
-            z-50" href="#">
-                Coming Soon
+            z-50">
+                <Link to="/contact">Contact</Link>
                 
             </a>
 
@@ -95,31 +97,30 @@ const Header = () => {
         backdrop-blur- md' >
             <nav className='flex flex-col items-center gap-6' >
                 <a  className="text-base tracking-wider
-            transition-colors hover:text-gray-300 
-            z-50" href="#"
-            >
-                HOME
+            transition-colors hover:text-gray-300 z-50">
+                
+                <Link to="/">Home</Link>
                 
             </a>
 
             <a className="text-base tracking-wider
             transition-colors hover:text-gray-300 
-            z-50" href="#">
-                Coming Soon
+            z-50">
+                <Link to="/about">About</Link>
                 
             </a>
 
             <a className="text-base tracking-wider
             transition-colors hover:text-gray-300 
-            z-50" href="#">
-                Coming Soon
+            z-50">
+                <Link to="/projects">Projects</Link>
                 
             </a>
 
             <a className="text-base tracking-wider
             transition-colors hover:text-gray-300 
-            z-50" href="#">
-                Coming Soon
+            z-50">
+                <Link to="/contact">Contact</Link>
                 
             </a> 
             <a className="text-base tracking-wider
