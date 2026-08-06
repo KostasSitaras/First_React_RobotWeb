@@ -1,6 +1,3 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -9,10 +6,6 @@ import Projects from './components/Routes/Projects';
 import Contact from './components/Routes/Contact';
 
 export default function App() {
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true, offset: 40 });
-  }, []);
-
   return (
     <main className="relative min-h-screen overflow-hidden">
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -27,6 +20,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Hero />} />
       </Routes>
     </main>
   );
