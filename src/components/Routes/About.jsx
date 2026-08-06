@@ -8,7 +8,7 @@ const skillGroups = [
 const About = () => {
   return (
     <section className="page-shell">
-      <div data-aos="fade-up" className="max-w-3xl">
+      <div className="max-w-3xl animate-fade-up">
         <p className="eyebrow">About me</p>
         <h1 className="page-title">Technology, problem solving and continuous learning.</h1>
         <p className="page-copy">
@@ -26,8 +26,11 @@ const About = () => {
       </div>
 
       <div className="mt-14 grid gap-5 sm:grid-cols-2">
-        {skillGroups.map((group) => (
-          <article key={group.title} data-aos="fade-up" className="content-card">
+        {skillGroups.map((group, index) => (
+          <article
+            key={group.title}
+            className={`content-card animate-fade-up delay-${Math.min(index + 1, 4)}`}
+          >
             <h2 className="text-xl font-semibold">{group.title}</h2>
             <div className="mt-5 flex flex-wrap gap-2">
               {group.items.map((item) => (
