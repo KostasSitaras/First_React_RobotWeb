@@ -1,64 +1,71 @@
-import 'boxicons/css/boxicons.min.css';
-import { stringify } from 'postcss';
-import Typewriter from 'typewriter-effect';
+import { Link } from 'react-router-dom';
+
+const technologies = ['React', 'Node.js', 'JavaScript', 'MySQL', 'Git', 'Linux'];
 
 const Hero = () => {
   return (
-    <main className="flex lg:mt-20 flex-col lg:flex-row 
-    items-center justify-between min-h-[calc(90vh-6rem)]">
+    <section className="mx-auto grid min-h-[calc(100vh-96px)] w-full max-w-7xl items-center gap-14 px-5 py-14 lg:grid-cols-[1.25fr_0.75fr] lg:px-8">
+      <div data-aos="fade-up" className="max-w-3xl">
+        <p className="mb-5 text-sm font-medium uppercase tracking-[0.28em] text-orange-200">
+          Junior Software Engineer · Thessaloniki
+        </p>
 
+        <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+          I build practical,
+          <span className="block text-gray-400">user-focused web experiences.</span>
+        </h1>
 
-        
-        <div data-aos="fade-right"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine" 
-            className="max-w-xl ml-[5%] z-10 mt-[90%]
-            md:mt-[60%] lg:mt-0">
-            
-            <div className='relative w-[95%] sm:w-48 h-10
-            bg-gradient-to-r from-[#656565] to-[#e99b63]
-            shadow-[0_0_15px_rgba(255,255,255,0.4)]
-            rounded-full'>
-                <div className='absolute inset-[2px] 
-                bg-black rounded-full flex items-center
-                justify-center gap-1 '>
-                    Home Page
-                </div>
-            </div>
-            {/* Main Heading  */}
-            <h1 className='text-3xl sm:text-4xl 
-            md:text-5xl lg:text-6xl font-semibold
-            tracking-wider my-8'>
-                Email for
-                <br />
-                Developers... 
-                
-                     
-                
-            </h1>
-            {/* Description  */}
-            <p className='text-base sm:text-lg
-            tracking-wider text-gray-400 max-w-[25rem]
-            lg:max-w-[30rem]'>
-                <Typewriter options={{
-                    strings: ['Hello World!',' My name is Kostas','I am trying to learn React','Thanks for Joining!'],
-                    autoStart: true,
-                    loop:true,
-                    cursor:'_',
-                } }  />
-            </p>
-            
-            {/* Call to Action Button i dont know if i want to use it */}
-             {/*{/<div>
-                <a href="#">
+        <p className="mt-7 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
+          I am a final-year Applied Informatics student with hands-on experience in React,
+          Node.js and relational databases. I enjoy turning ideas into clean, responsive
+          applications and continuously improving the way I design and write software.
+        </p>
 
-                </a>
-            </div>*/}
-
-
+        <div className="mt-9 flex flex-wrap gap-4">
+          <Link
+            to="/projects"
+            className="rounded-full bg-white px-6 py-3 font-medium text-black transition hover:bg-orange-200"
+          >
+            View projects
+          </Link>
+          <Link
+            to="/contact"
+            className="rounded-full border border-white/20 px-6 py-3 font-medium transition hover:border-white/50 hover:bg-white/5"
+          >
+            Contact me
+          </Link>
         </div>
-    </main>
-  )
-}
 
-export default Hero
+        <div className="mt-10 flex flex-wrap gap-2">
+          {technologies.map((technology) => (
+            <span
+              key={technology}
+              className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-gray-300"
+            >
+              {technology}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <aside
+        data-aos="fade-left"
+        className="rounded-3xl border border-white/10 bg-white/[0.035] p-7 shadow-2xl backdrop-blur"
+      >
+        <p className="text-sm uppercase tracking-[0.22em] text-gray-500">Currently</p>
+        <h2 className="mt-4 text-2xl font-semibold">Completing my B.Sc. in Applied Informatics</h2>
+        <p className="mt-4 leading-7 text-gray-400">
+          Expected graduation in September 2026. Open to junior software engineering,
+          front-end and full-stack opportunities.
+        </p>
+
+        <div className="mt-7 border-t border-white/10 pt-6">
+          <p className="text-sm text-gray-500">Focus</p>
+          <p className="mt-2 text-lg">React interfaces · REST APIs · SQL databases</p>
+        </div>
+      </aside>
+    </section>
+  );
+};
+
+export default Hero;
