@@ -20,7 +20,7 @@ const projects = [
 const Projects = () => {
   return (
     <section className="page-shell">
-      <div data-aos="fade-up" className="max-w-3xl">
+      <div className="max-w-3xl animate-fade-up">
         <p className="eyebrow">Selected work</p>
         <h1 className="page-title">Projects that show how I learn and build.</h1>
         <p className="page-copy">
@@ -31,8 +31,11 @@ const Projects = () => {
       </div>
 
       <div className="mt-14 grid gap-6 lg:grid-cols-2">
-        {projects.map((project) => (
-          <article key={project.title} data-aos="fade-up" className="content-card flex flex-col">
+        {projects.map((project, index) => (
+          <article
+            key={project.title}
+            className={`content-card flex flex-col animate-fade-up delay-${Math.min(index + 1, 4)}`}
+          >
             <div className="flex items-start justify-between gap-4">
               <h2 className="text-2xl font-semibold">{project.title}</h2>
               <span className="rounded-full border border-orange-200/20 bg-orange-200/10 px-3 py-1 text-xs text-orange-100">
