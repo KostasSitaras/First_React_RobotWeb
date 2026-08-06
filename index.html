@@ -2,11 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
     <title>KCODE.</title>
+    <style>
+      html, body { margin: 0; min-height: 100%; background: #000; color: #fff; }
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      #boot-status { position: fixed; inset: 0; z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 24px; background: #000; color: #fff; }
+      #boot-status.hidden { display: none; }
+      #boot-box { max-width: 720px; width: 100%; border: 1px solid rgba(255,255,255,.18); border-radius: 18px; padding: 20px; background: #111; }
+      #boot-title { font-size: 22px; font-weight: 700; margin: 0 0 12px; }
+      #boot-message { white-space: pre-wrap; word-break: break-word; color: #ddd; line-height: 1.55; font-size: 14px; }
+    </style>
+    <script>
+      (function () {
+        function show(message) {
+          var box = document.getElementById('boot-status');
+          var text = document.getElementById('boot-message');
+          if (box && text) {
+            box.className = '';
+            text.textContent = message;
+          }
+        }
+
+        window.__portfolioBootOk = function () {
+          var box = document.getElementById('boot-status');
+          if (box) box.className = 'hidden';
+        };
+
+        window.addEventListener('error', function (event) {
+          show('JavaScript error before React render:\n\n' +
+            (event.message || 'Unknown error') + '\n' +
+            (event.filename || '') + ':' + (event.lineno || '') + ':' + (event.colno || ''));
+        });
+
+        window.addEventListener('unhandledrejection', function (event) {
+          var reason = event.reason && (event.reason.stack || event.reason.message || String(event.reason));
+          show('Unhandled promise rejection before React render:\n\n' + (reason || 'Unknown rejection'));
+        });
+
+        setTimeout(function () {
+          if (!window.__portfolioReactMounted) {
+            show('React did not finish mounting within 4 seconds.\n\nThis confirms the problem happens during JavaScript startup on this device.');
+          }
+        }, 4000);
+      })();
+    </script>
   </head>
   <body>
+    <div id="boot-status">
+      <div id="boot-box">
+        <p id="boot-title">KCODE diagnostic</p>
+        <div id="boot-message">Loading the portfolio…</div>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
