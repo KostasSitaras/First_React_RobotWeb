@@ -1,140 +1,78 @@
-import 'boxicons/css/boxicons.min.css';
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
+const navigation = [
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Projects', to: '/projects' },
+  { label: 'Contact', to: '/contact' },
+];
 
 const Header = () => {
-    //simple toggle function for mobile menu
-    const toggleMobileMenu = () => {
-        // Get the mobile menu element
-        const mobileMenu = document.getElementById('mobileMenu');
-        // Toggle the 'hidden' class to show/hide the menu
-        if (mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.remove('hidden');
-        } else {
-            mobileMenu.classList.add('hidden');
-        }
-    }
+  const [isOpen, setIsOpen] = useState(false);
 
-    // Function to handle CV download
-    const downloadCV = () => {
-  const link = document.createElement("a");
-  link.href = "/Sitaras_Konstantinos_CV_en.pdf";
-  link.download = "Sitaras_Konstantinos_CV_en.pdf";
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-};
+  const linkClasses = ({ isActive }) =>
+    `text-sm tracking-[0.18em] uppercase transition-colors ${
+      isActive ? 'text-white' : 'text-gray-400 hover:text-white'
+    }`;
+
   return (
-    <header className="flex justify-between 
-    items-center py-4 px-4 lg:px-20">
-        <h1 data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="500" className="text-3xl md:text-4xl transition-colors hover:text-gray-300
-        lg:text-5xl font-light m-0 ">
-            KCODE.
-        </h1>
+    <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-6 lg:px-8">
+      <NavLink to="/" className="text-2xl font-semibold tracking-[0.2em]">
+        KCODE<span className="text-orange-300">.</span>
+      </NavLink>
 
-        {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-12">
-            <a data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="1000" className="text-base tracking-wider
-            transition-colors hover:text-gray-300 
-            z-50" >
-                <Link to="/">Home</Link>
-                
+      <nav className="hidden items-center gap-9 md:flex" aria-label="Main navigation">
+        {navigation.map((item) => (
+          <NavLink key={item.to} to={item.to} className={linkClasses}>
+            {item.label}
+          </NavLink>
+        ))}
+      </nav>
+
+      <a
+        href="/First_React_RobotWeb/Sitaras_Konstantinos_CV_en.pdf"
+        download
+        className="hidden rounded-full border border-white/20 bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-orange-200 md:inline-flex"
+      >
+        Download CV
+      </a>
+
+      <button
+        type="button"
+        className="rounded-lg border border-white/15 p-2 text-2xl md:hidden"
+        onClick={() => setIsOpen((value) => !value)}
+        aria-label="Toggle navigation"
+        aria-expanded={isOpen}
+      >
+        {isOpen ? '×' : '☰'}
+      </button>
+
+      {isOpen && (
+        <div className="absolute left-5 right-5 top-20 z-50 rounded-2xl border border-white/10 bg-black/95 p-6 shadow-2xl backdrop-blur md:hidden">
+          <nav className="flex flex-col gap-5" aria-label="Mobile navigation">
+            {navigation.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={linkClasses}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            <a
+              href="/First_React_RobotWeb/Sitaras_Konstantinos_CV_en.pdf"
+              download
+              className="mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-medium text-black"
+            >
+              Download CV
             </a>
-
-            <a data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="1500" className="text-base tracking-wider
-            transition-colors hover:text-gray-300 
-            z-50">
-                <Link to="/about">About</Link>
-                
-                
-            </a>
-
-            <a data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="2000"className="text-base tracking-wider
-            transition-colors hover:text-gray-300 
-            z-50">
-                <Link to="/projects">Projects</Link>
-                
-            </a>
-
-            <a data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="2500"className="text-base tracking-wider
-            transition-colors hover:text-gray-300 
-            z-50">
-                <Link to="/contact">Contact</Link>
-                
-            </a>
-
-
-
-        </nav>
-
-        {/* Web Button  */}
-        <button onClick={downloadCV} className="hidden md:block bg-
-        [#a7a7a7] text-white py-3 px-8 rounded-full
-        border-none font-medium transition-all 
-        duration-500 hover:bg-white hover:text-black cursor-pointer
-        z-50">
-            
-            Download CV
-        </button>
-
-        {/* Mobile Button  */}
-        <button onClick={toggleMobileMenu} className='md:hidden text-3xl p-2 z-50'>
-           <i class='bx bx-menu'></i>
-        </button>
-
-        {/* Mobile Navigation Bar  */}
-        <div id='mobileMenu'className='hidden fixed top-16 bottom-0 right-0 left-0 p-5
-        md:hidden z-40 bg-black bg-opacity-70
-        backdrop-blur- md' >
-            <nav className='flex flex-col items-center gap-6' >
-                <a  className="text-base tracking-wider
-            transition-colors hover:text-gray-300 z-50">
-                
-                <Link to="/">Home</Link>
-                
-            </a>
-
-            <a className="text-base tracking-wider
-            transition-colors hover:text-gray-300 
-            z-50">
-                <Link to="/about">About</Link>
-                
-            </a>
-
-            <a className="text-base tracking-wider
-            transition-colors hover:text-gray-300 
-            z-50">
-                <Link to="/projects">Projects</Link>
-                
-            </a>
-
-            <a className="text-base tracking-wider
-            transition-colors hover:text-gray-300 
-            z-50">
-                <Link to="/contact">Contact</Link>
-                
-            </a> 
-            <a className="text-base tracking-wider
-            transition-colors hover:text-gray-300 
-            z-50" href="/Sitaras_Konstantinos_CV_en.pdf" download>
-                Download CV
-                
-            </a>
-            </nav>
+          </nav>
         </div>
-
-
+      )}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
