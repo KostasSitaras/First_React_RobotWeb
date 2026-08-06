@@ -1,16 +1,60 @@
-# React + Vite
+# Konstantinos Sitaras — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive personal portfolio for presenting my background, technical skills and software projects.
 
-Currently, two official plugins are available:
+## Live demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[View the deployed portfolio](https://kostassitaras.github.io/First_React_RobotWeb/)
 
-## React Compiler
+## About the project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This portfolio was created as a practical React project and is being developed incrementally. It includes dedicated pages for my professional introduction, technical skills, selected projects and contact information.
 
-## Expanding the ESLint configuration
+## Built with
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- React Router
+- Tailwind CSS
+- AOS animations
+- GitHub Pages
+
+## Main features
+
+- Responsive navigation for desktop and mobile
+- Professional home and about pages
+- Skills organised by technical area
+- Project cards with technology stacks and links
+- Contact links for email, LinkedIn and GitHub
+- Downloadable CV
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Production build
+
+```bash
+npm run build
+```
+
+## Deployment
+
+```bash
+npm run deploy
+```
+
+## Roadmap
+
+- Add completed full-stack projects
+- Add project screenshots and case studies
+- Improve accessibility and automated testing
+- Add a custom domain
+
+## Author
+
+**Konstantinos Sitaras**  
+Applied Informatics student and aspiring software engineer based in Thessaloniki, Greece.

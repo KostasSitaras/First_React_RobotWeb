@@ -1,30 +1,47 @@
-import React from 'react'
-import Typewriter from 'typewriter-effect';
-
-export const Contact = () => {
+const Contact = () => {
   return (
-    <div>
-        <h1 className='text-1xl sm:text-2xl 
-            md:text-3xl lg:text-4xl font-semibold
-            tracking-wider my-8'>
-                Nothing to see here... 
-        </h1>
-            {/* Description  */}
-        <p className='text-base sm:text-lg
-            tracking-wider text-gray-400 max-w-[25rem]
-            lg:max-w-[30rem]'>
-                <Typewriter options={{
-                    strings: ['Just a work in progress. ',' Just a work in progress. ','Just a work in progress. ','Just a work in progress. '],
-                    autoStart: true,
-                    loop:true,
-                    cursor:'_',
-                } }  />
+    <section className="page-shell">
+      <div data-aos="fade-up" className="max-w-3xl">
+        <p className="eyebrow">Contact</p>
+        <h1 className="page-title">Let’s build something useful.</h1>
+        <p className="page-copy">
+          I am currently open to junior software engineering, front-end and full-stack
+          opportunities in Thessaloniki or remote. The best way to contact me is by email
+          or through LinkedIn.
         </p>
-            
-            
+      </div>
 
-       
-    </div>
-  )
-}
+      <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <a
+          href="mailto:kostassitaras1@gmail.com?subject=Portfolio%20Contact"
+          className="content-card transition hover:-translate-y-1 hover:border-white/25"
+        >
+          <p className="text-sm uppercase tracking-[0.2em] text-gray-500">Email</p>
+          <p className="mt-4 break-all text-lg">kostassitaras1@gmail.com</p>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/konstantinos-sitaras-731407253/"
+          target="_blank"
+          rel="noreferrer"
+          className="content-card transition hover:-translate-y-1 hover:border-white/25"
+        >
+          <p className="text-sm uppercase tracking-[0.2em] text-gray-500">LinkedIn</p>
+          <p className="mt-4 text-lg">Connect professionally ↗</p>
+        </a>
+
+        <a
+          href="https://github.com/KostasSitaras"
+          target="_blank"
+          rel="noreferrer"
+          className="content-card transition hover:-translate-y-1 hover:border-white/25"
+        >
+          <p className="text-sm uppercase tracking-[0.2em] text-gray-500">GitHub</p>
+          <p className="mt-4 text-lg">View my code ↗</p>
+        </a>
+      </div>
+    </section>
+  );
+};
+
 export default Contact;
