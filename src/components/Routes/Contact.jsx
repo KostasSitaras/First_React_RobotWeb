@@ -13,7 +13,7 @@ const Contact = () => {
 
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         <a
-          href="mailto:kostassitaras1@gmail.com"
+          href="mailto:kostassitaras1@gmail.com?subject=Portfolio%20Contact"
           className="content-card transition hover:-translate-y-1 hover:border-white/25"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-gray-500">Email</p>
@@ -21,7 +21,7 @@ const Contact = () => {
         </a>
 
         <a
-          href="https://www.linkedin.com/"
+          href="https://www.linkedin.com/in/konstantinos-sitaras-731407253/"
           target="_blank"
           rel="noreferrer"
           className="content-card transition hover:-translate-y-1 hover:border-white/25"
