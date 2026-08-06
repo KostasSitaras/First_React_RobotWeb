@@ -1,4 +1,4 @@
-import { Component, StrictMode } from 'react';
+import { Component, StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import './index.css';
@@ -37,18 +37,20 @@ class ErrorBoundary extends Component {
   }
 }
 
-window.addEventListener('error', (event) => {
-  console.error('Global browser error:', event.error || event.message);
-});
+function BootReporter() {
+  useEffect(() => {
+    window.__portfolioReactMounted = true;
+    window.__portfolioBootOk?.();
+  }, []);
 
-window.addEventListener('unhandledrejection', (event) => {
-  console.error('Unhandled promise rejection:', event.reason);
-});
+  return null;
+}
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ErrorBoundary>
       <HashRouter>
+        <BootReporter />
         <App />
       </HashRouter>
     </ErrorBoundary>
