@@ -6,9 +6,14 @@ const Hero = () => {
   return (
     <section className="mx-auto grid min-h-[calc(100vh-96px)] w-full max-w-7xl items-center gap-14 px-5 py-14 lg:grid-cols-[1.25fr_0.75fr] lg:px-8">
       <div data-reveal="up" className="max-w-3xl">
-        <p className="mb-5 text-sm font-medium uppercase tracking-[0.28em] text-orange-200">
-          Junior Software Engineer · Thessaloniki
-        </p>
+        <div className="mb-6">
+          <p className="text-lg font-semibold uppercase tracking-[0.16em] text-white sm:text-xl">
+            Konstantinos Sitaras
+          </p>
+          <p className="mt-2 text-sm font-medium uppercase tracking-[0.28em] text-orange-200">
+            Junior Software Engineer · Thessaloniki
+          </p>
+        </div>
 
         <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
           I build practical,
