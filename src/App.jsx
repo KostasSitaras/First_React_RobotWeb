@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Hero from './components/Hero';
 import About from './components/Routes/About';
 import Projects from './components/Routes/Projects';
@@ -38,7 +39,7 @@ export default function App() {
   }, [location.pathname]);
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main className="relative flex min-h-screen flex-col overflow-hidden">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -right-32 top-16 h-80 w-80 rounded-full bg-orange-400/20 blur-[120px]" />
         <div className="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-amber-300/10 blur-[140px]" />
@@ -46,13 +47,17 @@ export default function App() {
 
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<Hero />} />
-      </Routes>
+      <div className="flex-1">
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Hero />} />
+        </Routes>
+      </div>
+
+      <Footer />
     </main>
   );
 }
