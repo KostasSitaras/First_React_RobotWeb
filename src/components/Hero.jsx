@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="mx-auto grid min-h-[calc(100vh-96px)] w-full max-w-7xl items-center gap-14 px-5 py-14 lg:grid-cols-[1.25fr_0.75fr] lg:px-8">
       <div data-reveal="up" className="max-w-3xl">
         <div className="mb-6">
-          <p className="text-lg font-semibold uppercase tracking-[0.16em] text-white sm:text-xl">
+          <p className="text-lg font-semibold uppercase tracking-[0.16em] text-orange-200 sm:text-xl">
             Konstantinos Sitaras
           </p>
           <p className="mt-2 text-sm font-medium uppercase tracking-[0.28em] text-orange-200">
