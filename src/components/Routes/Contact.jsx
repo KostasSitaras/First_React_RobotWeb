@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <section className="page-shell">
-      <div className="max-w-3xl animate-fade-up">
+      <div data-reveal="up" className="max-w-3xl">
         <p className="eyebrow">Contact</p>
         <h1 className="page-title">Let’s build something useful.</h1>
         <p className="page-copy">
@@ -13,28 +13,31 @@ const Contact = () => {
 
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         <a
+          data-reveal="up"
           href="mailto:kostassitaras1@gmail.com?subject=Portfolio%20Contact"
-          className="content-card animate-fade-up delay-1 transition hover:-translate-y-1 hover:border-white/25"
+          className="content-card delay-1 transition hover:-translate-y-1 hover:border-white/25"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-gray-500">Email</p>
           <p className="mt-4 break-all text-lg">kostassitaras1@gmail.com</p>
         </a>
 
         <a
+          data-reveal="up"
           href="https://www.linkedin.com/in/konstantinos-sitaras-731407253/"
           target="_blank"
           rel="noreferrer"
-          className="content-card animate-fade-up delay-2 transition hover:-translate-y-1 hover:border-white/25"
+          className="content-card delay-2 transition hover:-translate-y-1 hover:border-white/25"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-gray-500">LinkedIn</p>
           <p className="mt-4 text-lg">Connect professionally ↗</p>
         </a>
 
         <a
+          data-reveal="up"
           href="https://github.com/KostasSitaras"
           target="_blank"
           rel="noreferrer"
-          className="content-card animate-fade-up delay-3 transition hover:-translate-y-1 hover:border-white/25"
+          className="content-card delay-3 transition hover:-translate-y-1 hover:border-white/25"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-gray-500">GitHub</p>
           <p className="mt-4 text-lg">View my code ↗</p>
