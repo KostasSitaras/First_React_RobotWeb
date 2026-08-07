@@ -5,7 +5,7 @@ const technologies = ['React', 'Node.js', 'JavaScript', 'MySQL', 'Git', 'Linux']
 const Hero = () => {
   return (
     <section className="mx-auto grid min-h-[calc(100vh-96px)] w-full max-w-7xl items-center gap-14 px-5 py-14 lg:grid-cols-[1.25fr_0.75fr] lg:px-8">
-      <div className="max-w-3xl animate-fade-up">
+      <div data-reveal="up" className="max-w-3xl">
         <p className="mb-5 text-sm font-medium uppercase tracking-[0.28em] text-orange-200">
           Junior Software Engineer · Thessaloniki
         </p>
@@ -48,7 +48,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <aside className="animate-fade-left delay-2 rounded-3xl border border-white/10 bg-white/[0.035] p-7 shadow-2xl backdrop-blur">
+      <aside data-reveal="left" className="delay-2 rounded-3xl border border-white/10 bg-white/[0.035] p-7 shadow-2xl backdrop-blur">
         <p className="text-sm uppercase tracking-[0.22em] text-gray-500">Currently</p>
         <h2 className="mt-4 text-2xl font-semibold">Completing my B.Sc. in Applied Informatics</h2>
         <p className="mt-4 leading-7 text-gray-400">
