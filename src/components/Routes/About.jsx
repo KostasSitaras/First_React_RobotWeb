@@ -41,6 +41,39 @@ const About = () => {
           </article>
         ))}
       </div>
+
+      <div className="mt-16">
+        <div data-reveal="up" className="mb-7">
+          <p className="eyebrow">Certifications</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Learning beyond the classroom.
+          </h2>
+        </div>
+
+        <article data-reveal="up" className="content-card max-w-3xl delay-1">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-orange-200">
+                Certificate of Completion · 2026
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold">Introduction to Artificial Intelligence</h3>
+              <p className="mt-2 text-gray-400">Founderz Business School · YMCA</p>
+              <p className="mt-4 max-w-2xl leading-7 text-gray-400">
+                Successfully completed the academic and practical requirements of the
+                Introduction to Artificial Intelligence – YMCA program.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                <span className="skill-chip">Artificial Intelligence</span>
+                <span className="skill-chip">AI Fundamentals</span>
+                <span className="skill-chip">Practical AI</span>
+              </div>
+            </div>
+            <div className="shrink-0 rounded-full border border-orange-300/20 bg-orange-300/10 px-4 py-2 text-sm font-medium text-orange-200">
+              Class of 2026
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
   );
 };
