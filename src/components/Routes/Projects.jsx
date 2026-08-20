@@ -9,10 +9,10 @@ const projects = [
     demo: 'https://kostassitaras.github.io/First_React_RobotWeb/',
   },
   {
-    title: 'TechMatch',
+    title: 'Airbnb Property Management',
     status: 'In development',
     description:
-      'A full-stack technology product comparison platform with authentication, filtering, favourites and an administration dashboard.',
+      'A full-stack property management platform for short-term rentals, designed to manage listings, reservations, guests, availability and day-to-day hosting operations from a single dashboard.',
     technologies: ['React', 'Node.js', 'Express.js', 'MySQL', 'REST API'],
   },
 ];
