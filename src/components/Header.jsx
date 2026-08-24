@@ -25,13 +25,19 @@ const Header = () => {
   const closeMenu = () => {
     if (!isOpen || isClosing) return;
 
-    setIsClosing(true);
-
     const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      setIsOpen(false);
+      setIsClosing(false);
+      return;
+    }
+
+    setIsClosing(true);
     window.setTimeout(() => {
       setIsOpen(false);
       setIsClosing(false);
-    }, prefersReducedMotion ? 0 : 360);
+    }, 220);
   };
 
   const toggleMenu = () => {
@@ -41,6 +47,8 @@ const Header = () => {
       openMenu();
     }
   };
+
+  const cvPath = `${import.meta.env.BASE_URL}Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf`;
 
   return (
     <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-6 lg:px-8">
@@ -57,8 +65,8 @@ const Header = () => {
       </nav>
 
       <a
-        href="/First_React_RobotWeb/Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf.pdf"
-        download
+        href={cvPath}
+        download="Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf"
         className="hidden rounded-full border border-white/20 bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-orange-200 md:inline-flex"
       >
         Download CV
@@ -67,7 +75,7 @@ const Header = () => {
       <button
         type="button"
         className={`rounded-lg border p-2 text-2xl transition-all duration-300 md:hidden ${
-          isOpen ? 'border-orange-200/40 bg-white/10' : 'border-white/15'
+          isOpen && !isClosing ? 'border-orange-200/40 bg-white/10' : 'border-white/15'
         }`}
         onClick={toggleMenu}
         aria-label="Toggle navigation"
@@ -91,25 +99,19 @@ const Header = () => {
               <NavLink
                 key={item.to}
                 to={item.to}
-                className={({ isActive }) => `${linkClasses({ isActive })} mobile-menu-item ${isClosing ? 'is-closing' : ''}`}
-                style={{
-                  animationDelay: isClosing
-                    ? `${(navigation.length - index) * 28}ms`
-                    : `${90 + index * 70}ms`,
-                }}
+                className={({ isActive }) => `${linkClasses({ isActive })} mobile-menu-item`}
+                style={{ animationDelay: `${90 + index * 70}ms` }}
                 onClick={closeMenu}
               >
                 {item.label}
               </NavLink>
             ))}
             <a
-              href="/First_React_RobotWeb/Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf.pdf"
-              download
+              href={cvPath}
+              download="Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf"
               onClick={closeMenu}
-              className={`mobile-menu-item mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-medium text-black ${
-                isClosing ? 'is-closing' : ''
-              }`}
-              style={{ animationDelay: isClosing ? '0ms' : '370ms' }}
+              className="mobile-menu-item mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-medium text-black"
+              style={{ animationDelay: '370ms' }}
             >
               Download CV
             </a>
