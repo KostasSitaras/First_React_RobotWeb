@@ -31,7 +31,7 @@ const Header = () => {
       </nav>
 
       <a
-        href="/First_React_RobotWeb/Sitaras_Konstantinos_CV_en.pdf"
+        href="/First_React_RobotWeb/Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf.pdf"
         download
         className="hidden rounded-full border border-white/20 bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-orange-200 md:inline-flex"
       >
@@ -62,7 +62,7 @@ const Header = () => {
               </NavLink>
             ))}
             <a
-              href="/First_React_RobotWeb/Sitaras_Konstantinos_CV_en.pdf"
+              href="/First_React_RobotWeb/Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf.pdf"
               download
               className="mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-medium text-black"
             >
