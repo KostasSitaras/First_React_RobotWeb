@@ -40,22 +40,29 @@ const Header = () => {
 
       <button
         type="button"
-        className="rounded-lg border border-white/15 p-2 text-2xl md:hidden"
+        className={`rounded-lg border p-2 text-2xl transition-all duration-300 md:hidden ${
+          isOpen ? 'border-orange-200/40 bg-white/10' : 'border-white/15'
+        }`}
         onClick={() => setIsOpen((value) => !value)}
         aria-label="Toggle navigation"
         aria-expanded={isOpen}
       >
-        {isOpen ? '×' : '☰'}
+        <span
+          className={`inline-block transition-transform duration-300 ${isOpen ? 'rotate-90' : 'rotate-0'}`}
+        >
+          {isOpen ? '×' : '☰'}
+        </span>
       </button>
 
       {isOpen && (
-        <div className="absolute left-5 right-5 top-20 z-50 rounded-2xl border border-white/10 bg-black/95 p-6 shadow-2xl backdrop-blur md:hidden">
+        <div className="mobile-menu-panel absolute left-5 right-5 top-20 z-50 rounded-2xl border border-white/10 bg-black/95 p-6 shadow-2xl backdrop-blur md:hidden">
           <nav className="flex flex-col gap-5" aria-label="Mobile navigation">
-            {navigation.map((item) => (
+            {navigation.map((item, index) => (
               <NavLink
                 key={item.to}
                 to={item.to}
-                className={linkClasses}
+                className={({ isActive }) => `${linkClasses({ isActive })} mobile-menu-item`}
+                style={{ animationDelay: `${90 + index * 70}ms` }}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -64,7 +71,8 @@ const Header = () => {
             <a
               href="/First_React_RobotWeb/Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf.pdf"
               download
-              className="mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-medium text-black"
+              className="mobile-menu-item mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-medium text-black"
+              style={{ animationDelay: '370ms' }}
             >
               Download CV
             </a>
