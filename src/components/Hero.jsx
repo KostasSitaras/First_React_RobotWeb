@@ -29,13 +29,13 @@ const Hero = () => {
         <div className="mt-9 flex flex-wrap gap-4">
           <Link
             to="/projects"
-            className="rounded-full bg-white px-6 py-3 font-medium text-black transition hover:bg-orange-200"
+            className="micro-button rounded-full bg-white px-6 py-3 font-medium text-black hover:bg-orange-200"
           >
             View projects
           </Link>
           <Link
             to="/contact"
-            className="rounded-full border border-white/20 px-6 py-3 font-medium transition hover:border-white/50 hover:bg-white/5"
+            className="micro-button rounded-full border border-white/20 px-6 py-3 font-medium hover:border-white/50 hover:bg-white/5"
           >
             Contact me
           </Link>
@@ -43,17 +43,17 @@ const Hero = () => {
 
         <div className="mt-10 flex flex-wrap gap-2">
           {technologies.map((technology) => (
-            <span
-              key={technology}
-              className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-gray-300"
-            >
+            <span key={technology} className="skill-chip">
               {technology}
             </span>
           ))}
         </div>
       </div>
 
-      <aside data-reveal="left" className="delay-2 rounded-3xl border border-white/10 bg-white/[0.035] p-7 shadow-2xl backdrop-blur">
+      <aside
+        data-reveal="left"
+        className="interactive-card delay-2 rounded-3xl border border-white/10 bg-white/[0.035] p-7 shadow-2xl backdrop-blur"
+      >
         <p className="text-sm uppercase tracking-[0.22em] text-gray-500">Currently</p>
         <h2 className="mt-4 text-2xl font-semibold">Completing my B.Sc. in Applied Informatics</h2>
         <p className="mt-4 leading-7 text-gray-400">
