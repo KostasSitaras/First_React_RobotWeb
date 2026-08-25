@@ -48,7 +48,48 @@
   }
 
   .project-link {
-    @apply font-medium text-orange-100 transition hover:text-white;
+    @apply inline-flex font-medium text-orange-100;
+  }
+
+  .content-card,
+  .interactive-card,
+  .skill-chip,
+  .project-link,
+  .micro-button,
+  .brand-link,
+  .nav-link {
+    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, color 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
+  }
+
+  .micro-button:active {
+    transform: scale(0.98);
+  }
+
+  .brand-link,
+  .nav-link {
+    display: inline-block;
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -7px;
+    height: 1px;
+    border-radius: 999px;
+    background: rgb(253 186 116);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 220ms ease;
+  }
+
+  .nav-link.is-active::after {
+    transform: scaleX(1);
   }
 
   [data-reveal] {
@@ -56,7 +97,10 @@
     transform: translate3d(0, 30px, 0);
     transition:
       opacity 760ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+      transform 760ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 220ms ease,
+      background-color 220ms ease,
+      box-shadow 220ms ease;
     will-change: opacity, transform;
   }
 
@@ -98,6 +142,46 @@
   }
 }
 
+@media (hover: hover) {
+  .content-card[data-reveal].is-visible:hover,
+  .interactive-card[data-reveal].is-visible:hover {
+    transform: translate3d(0, -4px, 0);
+    border-color: rgb(253 186 116 / 0.22);
+    background-color: rgb(255 255 255 / 0.05);
+    box-shadow: 0 22px 48px rgb(0 0 0 / 0.3);
+  }
+
+  .skill-chip:hover {
+    transform: translateY(-2px);
+    border-color: rgb(253 186 116 / 0.28);
+    background-color: rgb(253 186 116 / 0.07);
+    color: rgb(255 237 213);
+  }
+
+  .project-link:hover {
+    color: white;
+    transform: translateX(3px);
+  }
+
+  .micro-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgb(0 0 0 / 0.28);
+  }
+
+  .brand-link:hover,
+  .nav-link:hover {
+    transform: translateY(-1px);
+  }
+
+  .brand-link:hover {
+    opacity: 0.88;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
 @keyframes mobile-menu-in {
   from {
     opacity: 0;
@@ -134,7 +218,15 @@
 @media (prefers-reduced-motion: reduce) {
   [data-reveal],
   .mobile-menu-panel,
-  .mobile-menu-item {
+  .mobile-menu-item,
+  .content-card,
+  .interactive-card,
+  .skill-chip,
+  .project-link,
+  .micro-button,
+  .brand-link,
+  .nav-link,
+  .nav-link::after {
     opacity: 1;
     transform: none;
     transition: none;
