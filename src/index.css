@@ -17,12 +17,28 @@
   }
 
   a,
-  button {
+  button,
+  summary {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200 focus-visible:ring-offset-2 focus-visible:ring-offset-black;
+  }
+
+  ::selection {
+    background: rgb(253 186 116 / 0.28);
+    color: white;
   }
 }
 
 @layer components {
+  .skip-link {
+    @apply fixed left-4 top-4 z-[200] rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black shadow-xl;
+    transform: translateY(-180%);
+    transition: transform 180ms ease;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
   .page-shell {
     @apply mx-auto w-full max-w-7xl px-5 py-16 lg:px-8 lg:py-24;
   }
@@ -101,7 +117,6 @@
       border-color 220ms ease,
       background-color 220ms ease,
       box-shadow 220ms ease;
-    will-change: opacity, transform;
   }
 
   [data-reveal="left"] {
@@ -216,6 +231,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   [data-reveal],
   .mobile-menu-panel,
   .mobile-menu-item,
@@ -226,7 +245,8 @@
   .micro-button,
   .brand-link,
   .nav-link,
-  .nav-link::after {
+  .nav-link::after,
+  .skip-link {
     opacity: 1;
     transform: none;
     transition: none;
