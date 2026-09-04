@@ -35,7 +35,6 @@ jobs:
 
       - name: Prepare GitHub Pages files
         run: |
-          cp dist/index.html dist/404.html
           touch dist/.nojekyll
 
       - name: Publish to gh-pages
