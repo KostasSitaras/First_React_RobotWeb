@@ -61,8 +61,6 @@ export default function App() {
         Skip to main content
       </a>
 
-      <div className="ambient-background pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
-
       <Header />
 
       <main id="main-content" className="flex-1" tabIndex="-1">
