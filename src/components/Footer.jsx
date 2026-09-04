@@ -15,9 +15,15 @@ const Footer = () => {
 
         <div className="flex flex-col gap-2 sm:items-end">
           <p>© {new Date().getFullYear()} Konstantinos Sitaras. All rights reserved.</p>
-          <div className="flex flex-wrap gap-x-4 gap-y-2">
+          <nav className="flex flex-wrap gap-x-4 gap-y-2" aria-label="Footer navigation">
+            <Link className="transition hover:text-white" to="/faq">
+              FAQ
+            </Link>
             <Link className="transition hover:text-white" to="/privacy">
               Privacy Policy
+            </Link>
+            <Link className="transition hover:text-white" to="/terms">
+              Terms of Use
             </Link>
             <button
               type="button"
@@ -26,7 +32,7 @@ const Footer = () => {
             >
               Analytics preferences
             </button>
-          </div>
+          </nav>
         </div>
       </div>
     </footer>
