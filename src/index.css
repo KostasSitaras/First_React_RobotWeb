@@ -29,12 +29,6 @@
 }
 
 @layer components {
-  .ambient-background {
-    background:
-      radial-gradient(circle at 100% 8%, rgb(251 146 60 / 0.12), transparent 28%),
-      radial-gradient(circle at 0% 100%, rgb(252 211 77 / 0.07), transparent 30%);
-  }
-
   .skip-link {
     @apply fixed left-4 top-4 z-[200] rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black shadow-lg;
     transform: translateY(-180%);
