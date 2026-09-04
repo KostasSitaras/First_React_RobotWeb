@@ -25,33 +25,6 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
-
-    const revealElements = Array.from(document.querySelectorAll('[data-reveal]'));
-
-    if (!('IntersectionObserver' in window)) {
-      revealElements.forEach((element) => element.classList.add('is-visible'));
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          } else {
-            entry.target.classList.remove('is-visible');
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: '-6% 0px -8% 0px',
-      },
-    );
-
-    revealElements.forEach((element) => observer.observe(element));
-
-    return () => observer.disconnect();
   }, [location.pathname]);
 
   return (
