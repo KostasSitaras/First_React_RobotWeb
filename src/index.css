@@ -29,8 +29,14 @@
 }
 
 @layer components {
+  .ambient-background {
+    background:
+      radial-gradient(circle at 100% 8%, rgb(251 146 60 / 0.12), transparent 28%),
+      radial-gradient(circle at 0% 100%, rgb(252 211 77 / 0.07), transparent 30%);
+  }
+
   .skip-link {
-    @apply fixed left-4 top-4 z-[200] rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black shadow-xl;
+    @apply fixed left-4 top-4 z-[200] rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black shadow-lg;
     transform: translateY(-180%);
     transition: transform 180ms ease;
   }
@@ -56,7 +62,7 @@
   }
 
   .content-card {
-    @apply rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-xl backdrop-blur sm:p-7;
+    @apply rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-lg sm:p-7;
   }
 
   .skill-chip {
@@ -74,7 +80,7 @@
   .micro-button,
   .brand-link,
   .nav-link {
-    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, color 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease, opacity 180ms ease;
   }
 
   .micro-button:active {
@@ -101,7 +107,7 @@
     background: rgb(253 186 116);
     transform: scaleX(0);
     transform-origin: center;
-    transition: transform 220ms ease;
+    transition: transform 180ms ease;
   }
 
   .nav-link.is-active::after {
@@ -110,17 +116,14 @@
 
   [data-reveal] {
     opacity: 0;
-    transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 18px, 0);
     transition:
-      opacity 760ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 760ms cubic-bezier(0.22, 1, 0.36, 1),
-      border-color 220ms ease,
-      background-color 220ms ease,
-      box-shadow 220ms ease;
+      opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   [data-reveal="left"] {
-    transform: translate3d(34px, 0, 0);
+    transform: translate3d(24px, 0, 0);
   }
 
   [data-reveal].is-visible {
@@ -128,26 +131,25 @@
     transform: translate3d(0, 0, 0);
   }
 
-  .delay-1 { transition-delay: 90ms; }
-  .delay-2 { transition-delay: 170ms; }
-  .delay-3 { transition-delay: 250ms; }
-  .delay-4 { transition-delay: 330ms; }
+  .delay-1 { transition-delay: 60ms; }
+  .delay-2 { transition-delay: 120ms; }
+  .delay-3 { transition-delay: 180ms; }
+  .delay-4 { transition-delay: 240ms; }
 
   .mobile-menu-panel {
     transform-origin: top center;
-    animation: mobile-menu-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
-    will-change: opacity, transform;
+    animation: mobile-menu-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   .mobile-menu-panel.is-closing {
     pointer-events: none;
-    animation: mobile-menu-out 220ms cubic-bezier(0.33, 1, 0.68, 1) both;
+    animation: mobile-menu-out 180ms cubic-bezier(0.33, 1, 0.68, 1) both;
   }
 
   .mobile-menu-item {
     opacity: 0;
-    transform: translate3d(0, -10px, 0);
-    animation: mobile-menu-item-in 380ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transform: translate3d(0, -8px, 0);
+    animation: mobile-menu-item-in 300ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   .mobile-menu-panel.is-closing .mobile-menu-item {
@@ -160,10 +162,9 @@
 @media (hover: hover) {
   .content-card[data-reveal].is-visible:hover,
   .interactive-card[data-reveal].is-visible:hover {
-    transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -3px, 0);
     border-color: rgb(253 186 116 / 0.22);
     background-color: rgb(255 255 255 / 0.05);
-    box-shadow: 0 22px 48px rgb(0 0 0 / 0.3);
   }
 
   .skill-chip:hover {
@@ -180,7 +181,6 @@
 
   .micro-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgb(0 0 0 / 0.28);
   }
 
   .brand-link:hover,
@@ -200,7 +200,7 @@
 @keyframes mobile-menu-in {
   from {
     opacity: 0;
-    transform: translate3d(0, -14px, 0) scale(0.98);
+    transform: translate3d(0, -10px, 0) scale(0.99);
   }
   to {
     opacity: 1;
@@ -215,14 +215,14 @@
   }
   to {
     opacity: 0;
-    transform: translate3d(0, -8px, 0) scale(0.99);
+    transform: translate3d(0, -6px, 0) scale(0.995);
   }
 }
 
 @keyframes mobile-menu-item-in {
   from {
     opacity: 0;
-    transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -8px, 0);
   }
   to {
     opacity: 1;
