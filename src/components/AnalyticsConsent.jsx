@@ -72,13 +72,19 @@ const AnalyticsConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-3xl border border-white/10 bg-black/95 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+    <div
+      className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-3xl border border-white/10 bg-black/95 p-5 shadow-2xl backdrop-blur-xl sm:p-6"
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="analytics-consent-title"
+      aria-describedby="analytics-consent-description"
+    >
       <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-200">
+          <p id="analytics-consent-title" className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-200">
             Analytics preferences
           </p>
-          <p className="mt-2 text-sm leading-6 text-gray-400">
+          <p id="analytics-consent-description" className="mt-2 text-sm leading-6 text-gray-400">
             This portfolio uses Google Analytics only with your permission to understand visits
             and improve the site. You can accept or reject analytics without affecting the
             website experience.{' '}
@@ -88,20 +94,20 @@ const AnalyticsConsent = () => {
           </p>
         </div>
 
-        <div className="flex shrink-0 gap-3">
+        <div className="flex shrink-0 flex-wrap gap-3">
           <button
             type="button"
             onClick={rejectAnalytics}
-            className="rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:border-white/40 hover:bg-white/5"
+            className="micro-button rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white hover:border-white/40 hover:bg-white/5"
           >
-            Reject
+            Reject analytics
           </button>
           <button
             type="button"
             onClick={acceptAnalytics}
-            className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-orange-200"
+            className="micro-button rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-orange-200"
           >
-            Accept
+            Accept analytics
           </button>
         </div>
       </div>
