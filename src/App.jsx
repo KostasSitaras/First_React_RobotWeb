@@ -61,10 +61,7 @@ export default function App() {
         Skip to main content
       </a>
 
-      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
-        <div className="absolute -right-32 top-16 h-80 w-80 rounded-full bg-orange-400/20 blur-[120px]" />
-        <div className="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-amber-300/10 blur-[140px]" />
-      </div>
+      <div className="ambient-background pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
 
       <Header />
 
