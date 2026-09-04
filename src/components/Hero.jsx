@@ -52,7 +52,7 @@ const Hero = () => {
 
       <aside
         data-reveal="left"
-        className="interactive-card delay-2 rounded-3xl border border-white/10 bg-white/[0.035] p-7 shadow-2xl backdrop-blur"
+        className="interactive-card delay-2 rounded-3xl border border-white/10 bg-white/[0.035] p-7 shadow-lg"
       >
         <p className="text-sm uppercase tracking-[0.22em] text-gray-500">Currently</p>
         <h2 className="mt-4 text-2xl font-semibold">Completing my B.Sc. in Applied Informatics</h2>
