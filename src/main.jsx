@@ -1,4 +1,4 @@
-import { Component, StrictMode, useEffect } from 'react';
+import { Component, StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import './index.css';
@@ -27,7 +27,7 @@ class ErrorBoundary extends Component {
             {String(this.state.error?.message || this.state.error)}
           </p>
           <p style={{ color: '#9ca3af', marginTop: '16px' }}>
-            Please take a screenshot of this message.
+            Please refresh the page. If the issue continues, take a screenshot of this message.
           </p>
         </div>
       );
@@ -37,20 +37,10 @@ class ErrorBoundary extends Component {
   }
 }
 
-function BootReporter() {
-  useEffect(() => {
-    window.__portfolioReactMounted = true;
-    window.__portfolioBootOk?.();
-  }, []);
-
-  return null;
-}
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ErrorBoundary>
       <HashRouter>
-        <BootReporter />
         <App />
       </HashRouter>
     </ErrorBoundary>
