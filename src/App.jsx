@@ -2,10 +2,12 @@ import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import AnalyticsConsent from './components/AnalyticsConsent';
 import Hero from './components/Hero';
 import About from './components/Routes/About';
 import Projects from './components/Routes/Projects';
 import Contact from './components/Routes/Contact';
+import PrivacyPolicy from './components/Routes/PrivacyPolicy';
 
 export default function App() {
   const location = useLocation();
@@ -54,11 +56,13 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="*" element={<Hero />} />
         </Routes>
       </div>
 
       <Footer />
+      <AnalyticsConsent />
     </main>
   );
 }
