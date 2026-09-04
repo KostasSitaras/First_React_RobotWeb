@@ -37,7 +37,7 @@ const Header = () => {
     window.setTimeout(() => {
       setIsOpen(false);
       setIsClosing(false);
-    }, 220);
+    }, 180);
   };
 
   const toggleMenu = () => {
@@ -75,7 +75,7 @@ const Header = () => {
 
       <button
         type="button"
-        className={`rounded-lg border p-2 text-2xl transition-all duration-300 md:hidden ${
+        className={`rounded-lg border p-2 text-2xl transition-all duration-200 md:hidden ${
           isOpen && !isClosing ? 'border-orange-200/40 bg-white/10' : 'border-white/15'
         }`}
         onClick={toggleMenu}
@@ -84,7 +84,7 @@ const Header = () => {
         aria-controls="mobile-navigation"
       >
         <span
-          className={`inline-block transition-transform duration-300 ${isOpen && !isClosing ? 'rotate-90' : 'rotate-0'}`}
+          className={`inline-block transition-transform duration-200 ${isOpen && !isClosing ? 'rotate-90' : 'rotate-0'}`}
           aria-hidden="true"
         >
           {isOpen && !isClosing ? '×' : '☰'}
@@ -93,7 +93,7 @@ const Header = () => {
 
       {isOpen && (
         <div
-          className={`mobile-menu-panel absolute left-5 right-5 top-20 z-50 rounded-2xl border border-white/10 bg-black/95 p-6 shadow-2xl backdrop-blur md:hidden ${
+          className={`mobile-menu-panel absolute left-5 right-5 top-20 z-50 rounded-2xl border border-white/10 bg-black/95 p-6 shadow-xl md:hidden ${
             isClosing ? 'is-closing' : ''
           }`}
         >
@@ -103,7 +103,7 @@ const Header = () => {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) => `${linkClasses({ isActive })} mobile-menu-item`}
-                style={{ animationDelay: `${90 + index * 70}ms` }}
+                style={{ animationDelay: `${60 + index * 55}ms` }}
                 onClick={closeMenu}
               >
                 {item.label}
@@ -114,7 +114,7 @@ const Header = () => {
               download="Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf"
               onClick={closeMenu}
               className="micro-button mobile-menu-item mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-medium text-black"
-              style={{ animationDelay: '370ms' }}
+              style={{ animationDelay: '280ms' }}
               aria-label="Download Konstantinos Sitaras CV as PDF"
             >
               Download CV
