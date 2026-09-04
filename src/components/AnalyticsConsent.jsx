@@ -73,7 +73,7 @@ const AnalyticsConsent = () => {
 
   return (
     <div
-      className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-3xl border border-white/10 bg-black/95 p-5 shadow-2xl backdrop-blur-xl sm:p-6"
+      className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-3xl border border-white/10 bg-black/95 p-5 shadow-xl sm:p-6"
       role="dialog"
       aria-modal="false"
       aria-labelledby="analytics-consent-title"
