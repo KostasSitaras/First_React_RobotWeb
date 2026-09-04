@@ -28,7 +28,7 @@ export default function App() {
   }, [location.pathname]);
 
   return (
-    <div className="relative flex min-h-screen flex-col overflow-hidden">
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden">
       <SEO />
       <a className="skip-link" href="#main-content">
         Skip to main content
