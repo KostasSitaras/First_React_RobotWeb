@@ -5,6 +5,37 @@ const skillGroups = [
   { title: 'Tools', items: ['Git', 'GitHub', 'Linux', 'VS Code', 'BPMN'] },
 ];
 
+const journey = [
+  {
+    step: '01',
+    label: 'Education',
+    title: 'Applied Informatics · University of Macedonia',
+    description:
+      'Building a strong foundation in software development, databases, problem solving and modern web technologies while completing my degree.',
+  },
+  {
+    step: '02',
+    label: 'Professional background',
+    title: 'Four years of customer-facing experience',
+    description:
+      'Developed communication, teamwork, responsibility and practical problem-solving skills through fast-paced, people-focused work.',
+  },
+  {
+    step: '03',
+    label: '2026',
+    title: 'Introduction to Artificial Intelligence',
+    description:
+      'Completed the Founderz Business School · YMCA program, expanding my understanding of AI fundamentals and practical applications.',
+  },
+  {
+    step: '04',
+    label: 'Current direction',
+    title: 'Building toward software engineering',
+    description:
+      'Developing React, Node.js and SQL-based projects while preparing for my first professional role in software development.',
+  },
+];
+
 const About = () => {
   return (
     <section className="page-shell">
@@ -25,7 +56,51 @@ const About = () => {
         </p>
       </div>
 
-      <div className="mt-14 grid gap-5 sm:grid-cols-2">
+      <div className="mt-16 max-w-5xl">
+        <div data-reveal="up" className="mb-9 max-w-3xl">
+          <p className="eyebrow">Journey</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+            From learning fundamentals to building real projects.
+          </h2>
+          <p className="mt-4 max-w-2xl leading-7 text-gray-400">
+            A short view of the experiences that have shaped how I approach software,
+            teamwork and continuous development.
+          </p>
+        </div>
+
+        <div className="relative ml-3 border-l border-white/10 sm:ml-5">
+          {journey.map((item, index) => (
+            <article
+              key={item.step}
+              data-reveal="up"
+              className={`relative pb-10 pl-8 last:pb-0 sm:pl-10 delay-${Math.min(index + 1, 4)}`}
+            >
+              <span
+                className="absolute -left-[7px] top-2 h-3 w-3 rounded-full border border-orange-200/50 bg-black ring-4 ring-black"
+                aria-hidden="true"
+              />
+
+              <div className="content-card">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="max-w-3xl">
+                    <p className="text-sm font-medium uppercase tracking-[0.2em] text-orange-200">
+                      {item.label}
+                    </p>
+                    <h3 className="mt-3 text-xl font-semibold sm:text-2xl">{item.title}</h3>
+                    <p className="mt-3 leading-7 text-gray-400">{item.description}</p>
+                  </div>
+
+                  <span className="shrink-0 text-sm font-medium tracking-[0.18em] text-gray-600">
+                    {item.step}
+                  </span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-16 grid gap-5 sm:grid-cols-2">
         {skillGroups.map((group, index) => (
           <article
             key={group.title}
