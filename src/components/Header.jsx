@@ -51,12 +51,12 @@ const Header = () => {
   const cvPath = `${import.meta.env.BASE_URL}Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf`;
 
   return (
-    <header className="flex w-full items-center justify-between px-4 py-6 sm:px-5 lg:px-8 2xl:px-10">
-      <NavLink to="/" className="brand-link text-2xl font-semibold tracking-[0.2em]" aria-label="KCODE home">
+    <header className="site-gutter flex w-full items-center justify-between py-5 lg:py-6">
+      <NavLink to="/" className="brand-link text-xl font-semibold tracking-[0.18em] sm:text-2xl" aria-label="KCODE home">
         KCODE<span className="text-orange-300">.</span>
       </NavLink>
 
-      <nav className="hidden items-center gap-9 md:flex" aria-label="Main navigation">
+      <nav className="hidden items-center gap-7 md:flex lg:gap-9" aria-label="Main navigation">
         {navigation.map((item) => (
           <NavLink key={item.to} to={item.to} className={linkClasses}>
             {item.label}
@@ -67,7 +67,7 @@ const Header = () => {
       <a
         href={cvPath}
         download="Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf"
-        className="micro-button hidden rounded-full border border-white/20 bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-orange-200 md:inline-flex"
+        className="micro-button hidden rounded-full border border-white/20 bg-white px-4 py-2 text-sm font-medium text-black hover:bg-orange-200 md:inline-flex lg:px-5 lg:py-2.5"
         aria-label="Download Konstantinos Sitaras CV as PDF"
       >
         Download CV
