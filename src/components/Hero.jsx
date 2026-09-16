@@ -4,7 +4,7 @@ const technologies = ['React', 'Node.js', 'JavaScript', 'MySQL', 'Git', 'Linux']
 
 const Hero = () => {
   return (
-    <section className="mx-auto grid min-h-[calc(100vh-96px)] w-full max-w-[1440px] items-center gap-14 px-5 py-14 sm:px-6 lg:grid-cols-[1.25fr_0.75fr] lg:px-8 2xl:px-10">
+    <section className="grid min-h-[calc(100vh-96px)] w-full items-center gap-14 px-4 py-14 sm:px-5 lg:grid-cols-[1.25fr_0.75fr] lg:px-8 2xl:px-10">
       <div data-reveal="up" className="max-w-4xl">
         <div className="mb-6">
           <p className="text-lg font-semibold uppercase tracking-[0.16em] text-orange-200 sm:text-xl">
