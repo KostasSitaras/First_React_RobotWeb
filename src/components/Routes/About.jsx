@@ -39,7 +39,7 @@ const journey = [
 const About = () => {
   return (
     <section className="page-shell">
-      <div data-reveal="up" className="max-w-3xl">
+      <div data-reveal="up" className="max-w-4xl">
         <p className="eyebrow">About me</p>
         <h1 className="page-title">Technology, problem solving and continuous learning.</h1>
         <p className="page-copy">
@@ -56,37 +56,37 @@ const About = () => {
         </p>
       </div>
 
-      <div className="mt-16 max-w-5xl">
-        <div data-reveal="up" className="mb-9 max-w-3xl">
+      <div className="mt-16 w-full">
+        <div data-reveal="up" className="mb-9 max-w-4xl">
           <p className="eyebrow">Journey</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
             From learning fundamentals to building real projects.
           </h2>
-          <p className="mt-4 max-w-2xl leading-7 text-gray-400">
+          <p className="mt-4 max-w-3xl leading-7 text-gray-400 sm:text-lg">
             A short view of the experiences that have shaped how I approach software,
             teamwork and continuous development.
           </p>
         </div>
 
-        <div className="relative ml-3 border-l border-white/10 sm:ml-5">
+        <div className="relative ml-3 border-l border-white/10 sm:ml-5 xl:ml-0 xl:grid xl:grid-cols-2 xl:gap-6 xl:border-l-0">
           {journey.map((item, index) => (
             <article
               key={item.step}
               data-reveal="up"
-              className={`relative pb-10 pl-8 last:pb-0 sm:pl-10 delay-${Math.min(index + 1, 4)}`}
+              className={`relative pb-10 pl-8 last:pb-0 sm:pl-10 xl:pb-0 xl:pl-0 delay-${Math.min(index + 1, 4)}`}
             >
               <span
-                className="absolute -left-[7px] top-2 h-3 w-3 rounded-full border border-orange-200/50 bg-black ring-4 ring-black"
+                className="absolute -left-[7px] top-2 h-3 w-3 rounded-full border border-orange-200/50 bg-black ring-4 ring-black xl:hidden"
                 aria-hidden="true"
               />
 
-              <div className="content-card">
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="content-card h-full">
+                <div className="flex h-full flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="max-w-3xl">
                     <p className="text-sm font-medium uppercase tracking-[0.2em] text-orange-200">
                       {item.label}
                     </p>
-                    <h3 className="mt-3 text-xl font-semibold sm:text-2xl">{item.title}</h3>
+                    <h3 className="mt-3 text-xl font-semibold sm:text-2xl xl:text-[1.65rem]">{item.title}</h3>
                     <p className="mt-3 leading-7 text-gray-400">{item.description}</p>
                   </div>
 
@@ -100,7 +100,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="mt-16 grid gap-5 sm:grid-cols-2">
+      <div className="mt-16 grid gap-5 sm:grid-cols-2 xl:gap-6">
         {skillGroups.map((group, index) => (
           <article
             key={group.title}
@@ -118,14 +118,14 @@ const About = () => {
       </div>
 
       <div className="mt-16">
-        <div data-reveal="up" className="mb-7">
+        <div data-reveal="up" className="mb-7 max-w-4xl">
           <p className="eyebrow">Certifications</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
             Learning beyond the classroom.
           </h2>
         </div>
 
-        <article data-reveal="up" className="content-card max-w-3xl delay-1">
+        <article data-reveal="up" className="content-card max-w-4xl delay-1">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-orange-200">
