@@ -7,6 +7,14 @@ const Hero = () => {
     <section className="site-gutter grid min-h-[calc(100vh-88px)] w-full items-center gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,520px)] lg:gap-[clamp(3rem,7vw,8rem)] lg:py-16">
       <div data-reveal="up" className="max-w-[850px]">
         <div className="mb-5">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3 py-1.5 text-xs font-medium text-emerald-200 sm:text-sm">
+            <span className="relative flex h-2 w-2" aria-hidden="true">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400/25" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
+            Available for junior opportunities
+          </div>
+
           <p className="text-base font-semibold uppercase tracking-[0.15em] text-orange-200 sm:text-lg">
             Konstantinos Sitaras
           </p>
