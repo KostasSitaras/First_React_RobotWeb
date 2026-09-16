@@ -51,7 +51,7 @@ const Header = () => {
   const cvPath = `${import.meta.env.BASE_URL}Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf`;
 
   return (
-    <header className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-5 py-6 sm:px-6 lg:px-8 2xl:px-10">
+    <header className="flex w-full items-center justify-between px-4 py-6 sm:px-5 lg:px-8 2xl:px-10">
       <NavLink to="/" className="brand-link text-2xl font-semibold tracking-[0.2em]" aria-label="KCODE home">
         KCODE<span className="text-orange-300">.</span>
       </NavLink>
@@ -93,7 +93,7 @@ const Header = () => {
 
       {isOpen && (
         <div
-          className={`mobile-menu-panel absolute left-5 right-5 top-20 z-50 rounded-2xl border border-white/10 bg-black/95 p-6 shadow-xl md:hidden ${
+          className={`mobile-menu-panel absolute left-4 right-4 top-20 z-50 rounded-2xl border border-white/10 bg-black/95 p-6 shadow-xl md:hidden ${
             isClosing ? 'is-closing' : ''
           }`}
         >
