@@ -48,7 +48,7 @@ const About = () => {
           and full-stack applications. I have worked with React, Node.js, SQL databases and
           Git-based workflows through personal learning and development.
         </p>
-        <p className="page-copy mt-5">
+        <p className="page-copy mt-4">
           Alongside my technical background, four years of customer-facing work have helped
           me build strong communication, teamwork and problem-solving skills. I am looking
           for my first professional opportunity in software development, where I can contribute,
@@ -56,24 +56,24 @@ const About = () => {
         </p>
       </div>
 
-      <div className="mt-16 w-full">
-        <div data-reveal="up" className="mb-9 max-w-4xl">
+      <div className="mt-14 w-full lg:mt-16">
+        <div data-reveal="up" className="mb-8 max-w-4xl">
           <p className="eyebrow">Journey</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
             From learning fundamentals to building real projects.
           </h2>
-          <p className="mt-4 max-w-3xl leading-7 text-gray-400 sm:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-7 text-gray-400 sm:text-[1.05rem]">
             A short view of the experiences that have shaped how I approach software,
             teamwork and continuous development.
           </p>
         </div>
 
-        <div className="relative ml-3 border-l border-white/10 sm:ml-5 xl:ml-0 xl:grid xl:grid-cols-2 xl:gap-6 xl:border-l-0">
+        <div className="relative ml-3 border-l border-white/10 sm:ml-5 xl:ml-0 xl:grid xl:grid-cols-2 xl:gap-5 xl:border-l-0 2xl:grid-cols-4">
           {journey.map((item, index) => (
             <article
               key={item.step}
               data-reveal="up"
-              className={`relative pb-10 pl-8 last:pb-0 sm:pl-10 xl:pb-0 xl:pl-0 delay-${Math.min(index + 1, 4)}`}
+              className={`relative pb-8 pl-8 last:pb-0 sm:pl-10 xl:pb-0 xl:pl-0 delay-${Math.min(index + 1, 4)}`}
             >
               <span
                 className="absolute -left-[7px] top-2 h-3 w-3 rounded-full border border-orange-200/50 bg-black ring-4 ring-black xl:hidden"
@@ -81,18 +81,17 @@ const About = () => {
               />
 
               <div className="content-card h-full">
-                <div className="flex h-full flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="max-w-3xl">
-                    <p className="text-sm font-medium uppercase tracking-[0.2em] text-orange-200">
+                <div className="flex h-full flex-col gap-3">
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-orange-200 sm:text-sm">
                       {item.label}
                     </p>
-                    <h3 className="mt-3 text-xl font-semibold sm:text-2xl xl:text-[1.65rem]">{item.title}</h3>
-                    <p className="mt-3 leading-7 text-gray-400">{item.description}</p>
+                    <span className="shrink-0 text-xs font-medium tracking-[0.16em] text-gray-600 sm:text-sm">
+                      {item.step}
+                    </span>
                   </div>
-
-                  <span className="shrink-0 text-sm font-medium tracking-[0.18em] text-gray-600">
-                    {item.step}
-                  </span>
+                  <h3 className="text-lg font-semibold sm:text-xl">{item.title}</h3>
+                  <p className="text-sm leading-6 text-gray-400 sm:text-base sm:leading-7">{item.description}</p>
                 </div>
               </div>
             </article>
@@ -100,15 +99,15 @@ const About = () => {
         </div>
       </div>
 
-      <div className="mt-16 grid gap-5 sm:grid-cols-2 xl:gap-6">
+      <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {skillGroups.map((group, index) => (
           <article
             key={group.title}
             data-reveal="up"
             className={`content-card delay-${Math.min(index + 1, 4)}`}
           >
-            <h2 className="text-xl font-semibold">{group.title}</h2>
-            <div className="mt-5 flex flex-wrap gap-2">
+            <h2 className="text-lg font-semibold sm:text-xl">{group.title}</h2>
+            <div className="mt-4 flex flex-wrap gap-2">
               {group.items.map((item) => (
                 <span key={item} className="skill-chip">{item}</span>
               ))}
@@ -117,23 +116,23 @@ const About = () => {
         ))}
       </div>
 
-      <div className="mt-16">
+      <div className="mt-14 lg:mt-16">
         <div data-reveal="up" className="mb-7 max-w-4xl">
           <p className="eyebrow">Certifications</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
             Learning beyond the classroom.
           </h2>
         </div>
 
-        <article data-reveal="up" className="content-card max-w-4xl delay-1">
+        <article data-reveal="up" className="content-card max-w-5xl delay-1">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-orange-200">
+              <p className="text-xs font-medium uppercase tracking-[0.16em] text-orange-200 sm:text-sm">
                 Certificate of Completion · 2026
               </p>
-              <h3 className="mt-3 text-2xl font-semibold">Introduction to Artificial Intelligence</h3>
-              <p className="mt-2 text-gray-400">Founderz Business School · YMCA</p>
-              <p className="mt-4 max-w-2xl leading-7 text-gray-400">
+              <h3 className="mt-3 text-xl font-semibold sm:text-2xl">Introduction to Artificial Intelligence</h3>
+              <p className="mt-2 text-sm text-gray-400 sm:text-base">Founderz Business School · YMCA</p>
+              <p className="mt-4 max-w-2xl text-sm leading-6 text-gray-400 sm:text-base sm:leading-7">
                 Successfully completed the academic and practical requirements of the
                 Introduction to Artificial Intelligence – YMCA program.
               </p>
