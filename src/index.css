@@ -29,6 +29,11 @@
 }
 
 @layer components {
+  .site-gutter {
+    padding-left: clamp(1rem, 2.6vw, 3.5rem);
+    padding-right: clamp(1rem, 2.6vw, 3.5rem);
+  }
+
   .skip-link {
     @apply fixed left-4 top-4 z-[200] rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black;
     transform: translateY(-180%);
@@ -40,23 +45,27 @@
   }
 
   .page-shell {
-    @apply w-full px-4 py-16 sm:px-5 lg:px-8 lg:py-24 2xl:px-10;
+    @apply w-full py-14 lg:py-20;
+    padding-left: clamp(1rem, 2.6vw, 3.5rem);
+    padding-right: clamp(1rem, 2.6vw, 3.5rem);
   }
 
   .eyebrow {
-    @apply mb-5 text-sm font-medium uppercase tracking-[0.28em] text-orange-200;
+    @apply mb-4 text-xs font-medium uppercase tracking-[0.26em] text-orange-200 sm:text-sm;
   }
 
   .page-title {
-    @apply text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl 2xl:text-6xl;
+    font-size: clamp(2rem, 2.8vw, 3.75rem);
+    @apply font-semibold leading-[1.08] tracking-tight;
   }
 
   .page-copy {
-    @apply mt-7 max-w-3xl text-base leading-8 text-gray-400 sm:text-lg;
+    @apply mt-6 max-w-3xl text-base leading-7 text-gray-400 sm:text-[1.05rem] sm:leading-8;
   }
 
   .content-card {
-    @apply rounded-3xl border border-white/10 bg-white/[0.035] p-6 sm:p-7 lg:p-8;
+    @apply rounded-3xl border border-white/10 bg-white/[0.035];
+    padding: clamp(1.25rem, 1.6vw, 1.9rem);
   }
 
   .skill-chip {
