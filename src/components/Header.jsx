@@ -51,7 +51,7 @@ const Header = () => {
   const cvPath = `${import.meta.env.BASE_URL}Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf`;
 
   return (
-    <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-6 lg:px-8">
+    <header className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-5 py-6 sm:px-6 lg:px-8 2xl:px-10">
       <NavLink to="/" className="brand-link text-2xl font-semibold tracking-[0.2em]" aria-label="KCODE home">
         KCODE<span className="text-orange-300">.</span>
       </NavLink>
