@@ -20,7 +20,7 @@ const projects = [
 const Projects = () => {
   return (
     <section className="page-shell">
-      <div data-reveal="up" className="max-w-3xl">
+      <div data-reveal="up" className="max-w-4xl">
         <p className="eyebrow">Selected work</p>
         <h1 className="page-title">Projects that show how I learn and build.</h1>
         <p className="page-copy">
@@ -30,30 +30,32 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-2">
+      <div className="mt-12 grid gap-5 lg:grid-cols-2 lg:gap-6">
         {projects.map((project, index) => (
           <article
             key={project.title}
             data-reveal="up"
-            className={`content-card flex flex-col delay-${Math.min(index + 1, 4)}`}
+            className={`content-card flex min-h-[280px] flex-col delay-${Math.min(index + 1, 4)}`}
           >
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-2xl font-semibold">{project.title}</h2>
-              <span className="rounded-full border border-orange-200/20 bg-orange-200/10 px-3 py-1 text-xs text-orange-100">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <h2 className="text-xl font-semibold sm:text-2xl">{project.title}</h2>
+              <span className="w-fit shrink-0 rounded-full border border-orange-200/20 bg-orange-200/10 px-3 py-1 text-xs text-orange-100">
                 {project.status}
               </span>
             </div>
 
-            <p className="mt-5 flex-1 leading-7 text-gray-400">{project.description}</p>
+            <p className="mt-4 max-w-3xl flex-1 text-sm leading-6 text-gray-400 sm:text-base sm:leading-7">
+              {project.description}
+            </p>
 
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-5 flex flex-wrap gap-2">
               {project.technologies.map((technology) => (
                 <span key={technology} className="skill-chip">{technology}</span>
               ))}
             </div>
 
             {(project.repository || project.demo) && (
-              <div className="mt-7 flex flex-wrap gap-4 border-t border-white/10 pt-5 text-sm">
+              <div className="mt-6 flex flex-wrap gap-4 border-t border-white/10 pt-5 text-sm">
                 {project.demo && (
                   <a className="project-link" href={project.demo} target="_blank" rel="noreferrer">
                     Live demo ↗
