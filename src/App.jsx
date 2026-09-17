@@ -26,11 +26,20 @@ export default function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
 
-    const revealElements = Array.from(document.querySelectorAll('[data-reveal]'));
+    const getRevealElements = (root = document) =>
+      Array.from(root.querySelectorAll?.('[data-reveal]') ?? []);
 
     if (!('IntersectionObserver' in window)) {
-      revealElements.forEach((element) => element.classList.add('is-visible'));
-      return undefined;
+      const showRevealElements = () => {
+        getRevealElements().forEach((element) => element.classList.add('is-visible'));
+      };
+
+      showRevealElements();
+
+      const fallbackMutationObserver = new MutationObserver(showRevealElements);
+      fallbackMutationObserver.observe(document.body, { childList: true, subtree: true });
+
+      return () => fallbackMutationObserver.disconnect();
     }
 
     const observer = new IntersectionObserver(
@@ -45,9 +54,38 @@ export default function App() {
       },
     );
 
-    revealElements.forEach((element) => observer.observe(element));
+    const observeRevealElements = (root = document) => {
+      if (root instanceof Element && root.matches('[data-reveal]')) {
+        observer.observe(root);
+      }
 
-    return () => observer.disconnect();
+      getRevealElements(root).forEach((element) => observer.observe(element));
+    };
+
+    observeRevealElements();
+
+    // Lazy-loaded routes may mount after this effect has already run.
+    // Watch for newly inserted reveal elements so a direct reload on /about,
+    // /projects, etc. still initializes their animations correctly.
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof Element) {
+            observeRevealElements(node);
+          }
+        });
+      });
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      mutationObserver.disconnect();
+      observer.disconnect();
+    };
   }, [location.pathname]);
 
   return (
