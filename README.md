@@ -57,4 +57,4 @@ npm run deploy
 ## Author
 
 **Konstantinos Sitaras**  
-Applied Informatics student and aspiring software engineer based in Thessaloniki, Greece.
+Applied Informatics Graduate and aspiring software engineer based in Thessaloniki, Greece.
