@@ -124,29 +124,76 @@ const About = () => {
           </h2>
         </div>
 
-        <article data-reveal="up" className="content-card max-w-5xl delay-1">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-orange-200 sm:text-sm">
-                Certificate of Completion · 2026
-              </p>
-              <h3 className="mt-3 text-xl font-semibold sm:text-2xl">Introduction to Artificial Intelligence</h3>
-              <p className="mt-2 text-sm text-gray-400 sm:text-base">Founderz Business School · YMCA</p>
-              <p className="mt-4 max-w-2xl text-sm leading-6 text-gray-400 sm:text-base sm:leading-7">
-                Successfully completed the academic and practical requirements of the
-                Introduction to Artificial Intelligence – YMCA program.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                <span className="skill-chip">Artificial Intelligence</span>
-                <span className="skill-chip">AI Fundamentals</span>
-                <span className="skill-chip">Practical AI</span>
-              </div>
-            </div>
-            <div className="shrink-0 rounded-full border border-orange-300/20 bg-orange-300/10 px-4 py-2 text-sm font-medium text-orange-200">
-              Class of 2026
-            </div>
-          </div>
-        </article>
+        <div className="grid gap-5 lg:grid-cols-2 lg:gap-6">
+
+  <article
+    data-reveal="up"
+    className="content-card delay-1"
+  >
+    <div className="flex flex-col gap-5">
+      <div>
+        <p className="text-sm font-medium uppercase tracking-[0.18em] text-orange-200">
+          Certificate of Completion · 2026
+        </p>
+
+        <h3 className="mt-3 text-2xl font-semibold">
+          Introduction to Artificial Intelligence
+        </h3>
+
+        <p className="mt-2 text-gray-400">
+          Founderz Business School · YMCA
+        </p>
+
+        <p className="mt-4 max-w-2xl leading-7 text-gray-400">
+          Successfully completed the academic and practical requirements of the
+          Introduction to Artificial Intelligence – YMCA program.
+        </p>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          <span className="skill-chip">Artificial Intelligence</span>
+          <span className="skill-chip">AI Fundamentals</span>
+          <span className="skill-chip">Practical AI</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+  <article
+    data-reveal="up"
+    className="content-card delay-2"
+  >
+    <div className="flex flex-col gap-5">
+      <div>
+        <p className="text-sm font-medium uppercase tracking-[0.18em] text-orange-200">
+          Certificate of Completion · 2025
+        </p>
+
+        <h3 className="mt-3 text-2xl font-semibold">
+          Built with AI - Attendee
+        </h3>
+
+        <p className="mt-2 text-gray-400">
+          Google · UOM
+        </p>
+
+        <p className="mt-4 max-w-2xl leading-7 text-gray-400">
+          Completed Google’s Built with AI program, working with Google Colab and Gemini to explore practical generative AI workflows. 
+          The program included hands-on experimentation with AI models, 
+          prompt engineering and the development of AI-powered solutions in a cloud-based environment.
+        </p>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          <span className="skill-chip">Google Gemini</span>
+          <span className="skill-chip">ChatGPT</span>
+          <span className="skill-chip">Google Colab</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+        
       </div>
     </section>
   );
