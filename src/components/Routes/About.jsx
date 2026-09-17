@@ -11,7 +11,7 @@ const journey = [
     label: 'Education',
     title: 'Applied Informatics · University of Macedonia',
     description:
-      'Building a strong foundation in software development, databases, problem solving and modern web technologies while completing my degree.',
+      'Completed my B.Sc. in Applied Informatics, Building a strong foundation in software development, databases, problem solving and modern web technologies while completing my degree.',
   },
   {
     step: '02',
@@ -43,7 +43,7 @@ const About = () => {
         <p className="eyebrow">About me</p>
         <h1 className="page-title">Technology, problem solving and continuous learning.</h1>
         <p className="page-copy">
-          I am a final-year Applied Informatics student at the University of Macedonia.
+          I hold a B.Sc. in Applied Informatics from the University of Macedonia.
           My main interest is software engineering, with a focus on modern web development
           and full-stack applications. I have worked with React, Node.js, SQL databases and
           Git-based workflows through personal learning and development.

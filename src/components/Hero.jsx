@@ -29,7 +29,7 @@ const Hero = () => {
         </h1>
 
         <p className="mt-6 max-w-3xl text-base leading-7 text-gray-400 sm:text-[1.05rem] sm:leading-8">
-          I am a final-year Applied Informatics student with hands-on experience in React,
+          I am an Applied Informatics graduate from the University of Macedonia, with hands-on experience in React,
           Node.js and relational databases. I enjoy turning ideas into clean, responsive
           applications and continuously improving the way I design and write software.
         </p>
@@ -63,9 +63,9 @@ const Hero = () => {
         className="interactive-card delay-2 w-full max-w-[520px] justify-self-end rounded-3xl border border-white/10 bg-white/[0.035] p-6 lg:p-7"
       >
         <p className="text-xs uppercase tracking-[0.2em] text-gray-500 sm:text-sm">Currently</p>
-        <h2 className="mt-4 text-xl font-semibold sm:text-2xl">Completing my B.Sc. in Applied Informatics</h2>
+        <h2 className="mt-4 text-xl font-semibold sm:text-2xl">B.Sc. in Applied Informatics</h2>
         <p className="mt-4 text-sm leading-7 text-gray-400 sm:text-base">
-          Expected graduation in September 2026. Open to junior software engineering,
+          University of Macedonia · Graduate. Open to junior software engineering,
           front-end and full-stack opportunities.
         </p>
 
