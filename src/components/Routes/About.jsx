@@ -8,7 +8,7 @@ const skillGroups = [
 const journey = [
   {
     step: '01',
-    label: 'Education',
+    label: 'Education 2021-2026',
     title: 'Applied Informatics · University of Macedonia',
     description:
       'Completed my B.Sc. in Applied Informatics, Building a strong foundation in software development, databases, problem solving and modern web technologies while completing my degree.',
@@ -22,7 +22,7 @@ const journey = [
   },
   {
     step: '03',
-    label: '2026',
+    label: 'Introduction to Artificial Intelligence 2026',
     title: 'Introduction to Artificial Intelligence',
     description:
       'Completed the Founderz Business School · YMCA program, expanding my understanding of AI fundamentals and practical applications.',

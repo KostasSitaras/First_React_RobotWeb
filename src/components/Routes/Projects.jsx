@@ -10,7 +10,7 @@ const projects = [
   },
   {
     title: 'Airbnb Property Management',
-    status: 'In development',
+    status: 'In development...',
     description:
       'A full-stack property management platform for short-term rentals, designed to manage listings, reservations, guests, availability and day-to-day hosting operations from a single dashboard.',
     technologies: ['React', 'Node.js', 'Express.js', 'MySQL', 'REST API'],
