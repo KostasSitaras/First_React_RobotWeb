@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../Hero';
+import '../../story-scroll-snap.css';
 
 const principles = [
   {
@@ -25,11 +27,21 @@ const principles = [
 ];
 
 const Home = () => {
+  useEffect(() => {
+    document.documentElement.classList.add('story-snap-enabled');
+
+    return () => {
+      document.documentElement.classList.remove('story-snap-enabled');
+    };
+  }, []);
+
   return (
     <>
-      <Hero />
+      <div className="story-snap-target story-snap-hero">
+        <Hero />
+      </div>
 
-      <section className="story-section story-section-bordered" aria-labelledby="origin-title">
+      <section className="story-section story-section-bordered story-snap-target" aria-labelledby="origin-title">
         <div className="story-grid">
           <div data-reveal="up" className="story-chapter-heading">
             <p className="story-kicker">01 / Origin</p>
@@ -69,7 +81,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="story-section story-section-bordered" aria-labelledby="transition-title">
+      <section className="story-section story-section-bordered story-snap-target" aria-labelledby="transition-title">
         <div className="story-grid">
           <div data-reveal="up" className="story-chapter-heading">
             <p className="story-kicker">02 / Transition</p>
@@ -124,7 +136,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="story-section story-section-bordered" aria-labelledby="building-title">
+      <section className="story-section story-section-bordered story-snap-target" aria-labelledby="building-title">
         <div data-reveal="up" className="mb-12 max-w-5xl lg:mb-16">
           <p className="story-kicker">03 / Building</p>
           <h2 id="building-title" className="story-display max-w-5xl">
@@ -222,7 +234,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="story-section story-section-bordered" aria-labelledby="approach-title">
+      <section className="story-section story-section-bordered story-snap-target" aria-labelledby="approach-title">
         <div className="story-grid">
           <div data-reveal="up" className="story-chapter-heading">
             <p className="story-kicker">04 / Approach</p>
@@ -249,7 +261,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="story-section" aria-labelledby="next-title">
+      <section className="story-section story-snap-target" aria-labelledby="next-title">
         <div data-reveal="up" className="story-finale">
           <p className="story-kicker">05 / Next</p>
           <p className="story-ghost-word story-ghost-word-finale" aria-hidden="true">NEXT</p>
