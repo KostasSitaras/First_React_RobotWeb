@@ -4,76 +4,87 @@ const technologies = ['React', 'Node.js', 'JavaScript', 'MySQL', 'Git', 'Linux']
 
 const Hero = () => {
   return (
-    <section className="site-gutter grid min-h-[calc(100vh-88px)] w-full items-center gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,520px)] lg:gap-[clamp(3rem,7vw,8rem)] lg:py-16">
-      <div data-reveal="up" className="max-w-[850px]">
-        <div className="mb-5">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3 py-1.5 text-xs font-medium text-emerald-200 sm:text-sm">
-            <span className="relative flex h-2 w-2" aria-hidden="true">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400/25" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+    <section className="story-hero site-gutter relative flex min-h-[calc(100vh-88px)] w-full items-center overflow-hidden py-14 lg:py-20">
+      <div className="story-hero-grid w-full">
+        <div data-reveal="up" className="relative z-10 max-w-[980px]">
+          <div className="mb-8 flex flex-wrap items-center gap-3">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/[0.05] px-3 py-1.5 text-xs font-medium text-emerald-200 sm:text-sm">
+              <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
+              Available for junior opportunities
+            </div>
+            <span className="text-xs uppercase tracking-[0.22em] text-gray-600 sm:text-sm">
+              Thessaloniki · Greece
             </span>
-            Available for junior opportunities
           </div>
 
-          <p className="text-base font-semibold uppercase tracking-[0.15em] text-orange-200 sm:text-lg">
-            Konstantinos Sitaras
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-orange-200 sm:text-base">
+            Konstantinos Sitaras · Junior Software Engineer
           </p>
-          <p className="mt-2 text-xs font-medium uppercase tracking-[0.26em] text-orange-200 sm:text-sm">
-            Junior Software Engineer · Thessaloniki
+
+          <h1 className="story-hero-title">
+            From working
+            <span className="block text-gray-500">with people</span>
+            <span className="block">to building</span>
+            <span className="block text-orange-200">for people.</span>
+          </h1>
+
+          <p className="mt-7 max-w-3xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
+            I am an Applied Informatics graduate who enjoys turning real problems into clear,
+            practical software. My background taught me how to understand people first;
+            software gave me the tools to build for them.
           </p>
+
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link
+              to="/projects"
+              className="micro-button rounded-full bg-white px-6 py-3 text-sm font-medium text-black hover:bg-orange-200 sm:text-base"
+            >
+              Explore my work
+            </Link>
+            <Link
+              to="/contact"
+              className="micro-button rounded-full border border-white/20 px-6 py-3 text-sm font-medium hover:border-white/40 hover:bg-white/5 sm:text-base"
+            >
+              Start a conversation
+            </Link>
+          </div>
+
+          <div className="mt-9 flex flex-wrap items-center gap-2">
+            {technologies.map((technology) => (
+              <span key={technology} className="skill-chip">
+                {technology}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <h1 className="text-[clamp(2.7rem,4.15vw,5rem)] font-semibold leading-[1.03] tracking-tight">
-          I build practical,
-          <span className="block text-gray-400">user-focused web experiences.</span>
-        </h1>
-
-        <p className="mt-6 max-w-3xl text-base leading-7 text-gray-400 sm:text-[1.05rem] sm:leading-8">
-          I am an Applied Informatics graduate from the University of Macedonia, with hands-on experience in React,
-          Node.js and relational databases. I enjoy turning ideas into clean, responsive
-          applications and continuously improving the way I design and write software.
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            to="/projects"
-            className="micro-button rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-orange-200 sm:px-6 sm:py-3 sm:text-base"
-          >
-            View projects
-          </Link>
-          <Link
-            to="/contact"
-            className="micro-button rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium hover:border-white/50 hover:bg-white/5 sm:px-6 sm:py-3 sm:text-base"
-          >
-            Contact me
-          </Link>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-2">
-          {technologies.map((technology) => (
-            <span key={technology} className="skill-chip">
-              {technology}
-            </span>
-          ))}
-        </div>
+        <aside data-reveal="left" className="story-hero-side delay-2">
+          <div className="story-hero-side-top">
+            <span>Current chapter</span>
+            <span>2026</span>
+          </div>
+          <p className="story-hero-side-title">Graduate. Building. Looking for the first professional chapter.</p>
+          <p className="story-hero-side-copy">
+            B.Sc. in Applied Informatics · University of Macedonia
+          </p>
+          <div className="story-hero-side-rule" />
+          <div className="story-hero-side-bottom">
+            <div>
+              <span>Focus</span>
+              <p>React interfaces · REST APIs · SQL databases</p>
+            </div>
+            <div>
+              <span>Mindset</span>
+              <p>Useful software · clear thinking · continuous improvement</p>
+            </div>
+          </div>
+        </aside>
       </div>
 
-      <aside
-        data-reveal="left"
-        className="interactive-card delay-2 w-full max-w-[520px] justify-self-end rounded-3xl border border-white/10 bg-white/[0.035] p-6 lg:p-7"
-      >
-        <p className="text-xs uppercase tracking-[0.2em] text-gray-500 sm:text-sm">Currently</p>
-        <h2 className="mt-4 text-xl font-semibold sm:text-2xl">B.Sc. in Applied Informatics</h2>
-        <p className="mt-4 text-sm leading-7 text-gray-400 sm:text-base">
-          University of Macedonia · Graduate. Open to junior software engineering,
-          front-end and full-stack opportunities.
-        </p>
-
-        <div className="mt-6 border-t border-white/10 pt-5">
-          <p className="text-sm text-gray-500">Focus</p>
-          <p className="mt-2 text-base sm:text-lg">React interfaces · REST APIs · SQL databases</p>
-        </div>
-      </aside>
+      <div className="story-scroll-cue" aria-hidden="true">
+        <span>Scroll to begin</span>
+        <span className="story-scroll-line" />
+      </div>
     </section>
   );
 };
