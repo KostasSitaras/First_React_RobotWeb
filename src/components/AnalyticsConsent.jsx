@@ -73,13 +73,13 @@ const AnalyticsConsent = () => {
 
   return (
     <div
-      className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-3xl border border-white/10 bg-black/95 p-5 shadow-xl sm:p-6"
+      className="fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-[100] mx-auto max-h-[calc(100dvh-2rem)] max-w-3xl overflow-y-auto overscroll-contain rounded-3xl border border-white/10 bg-black/95 p-5 shadow-xl sm:p-6"
       role="dialog"
       aria-modal="false"
       aria-labelledby="analytics-consent-title"
       aria-describedby="analytics-consent-description"
     >
-      <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+      <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
         <div className="max-w-xl">
           <p id="analytics-consent-title" className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-200">
             Analytics preferences

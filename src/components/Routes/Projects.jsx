@@ -92,8 +92,8 @@ const Projects = () => {
 
       <div className="mt-16 space-y-24 lg:mt-24 lg:space-y-32">
         {projects.map((project, index) => (
-          <article key={project.title} data-reveal="up" className={`delay-${Math.min(index + 1, 4)}`}>
-            <div className="grid gap-8 border-t border-white/10 pt-7 lg:grid-cols-[90px_minmax(0,1fr)] lg:gap-10">
+          <article key={project.title}>
+            <div data-reveal="up" className={`grid gap-8 border-t border-white/10 pt-7 lg:grid-cols-[90px_minmax(0,1fr)] lg:gap-10 delay-${Math.min(index + 1, 4)}`}>
               <div className="flex items-start justify-between gap-4 lg:block">
                 <span className="text-xs font-medium uppercase tracking-[0.2em] text-gray-600">
                   {project.number}
@@ -107,16 +107,16 @@ const Projects = () => {
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-orange-200 sm:text-sm">
                   {project.title}
                 </p>
-                <h2 className="mt-4 max-w-5xl text-[clamp(2.4rem,5.8vw,6.8rem)] font-semibold leading-[0.96] tracking-[-0.05em]">
+                <h2 className="mt-4 max-w-5xl text-[clamp(2rem,4.6vw,5.4rem)] font-semibold leading-[1.06] tracking-[-0.05em]">
                   {project.statement}
                 </h2>
-                <p className="mt-7 max-w-3xl text-lg leading-8 text-gray-400">
+                <p className="mt-7 max-w-3xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
                   {project.intro}
                 </p>
               </div>
             </div>
 
-            <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-10">
+            <div data-reveal="up" className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-10">
               <ProjectVisual type={project.type} />
 
               <div className="grid content-start gap-0">

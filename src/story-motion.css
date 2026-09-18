@@ -1,0 +1,50 @@
+html.story-motion-enabled {
+  scroll-padding-top: var(--story-header-height, 5.5rem);
+}
+
+.story-intro .story-hero {
+  min-height: calc(100svh - var(--story-header-height, 5.5rem));
+}
+
+.story-chapter.story-section {
+  padding-block: clamp(5rem, 8vw, 8rem);
+}
+
+@media (max-width: 767px) {
+  .story-chapter.story-section {
+    padding-block: 3.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .story-chapter [data-reveal] {
+    transform: translateY(40px);
+    transition:
+      opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 950ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 0ms;
+  }
+
+  .story-chapter [data-reveal].is-visible,
+  .story-chapter [data-reveal]:focus-within {
+    opacity: 1;
+    transform: none;
+  }
+
+  .story-chapter .delay-1.is-visible { transition-delay: 60ms; }
+  .story-chapter .delay-2.is-visible { transition-delay: 120ms; }
+  .story-chapter .delay-3.is-visible { transition-delay: 180ms; }
+  .story-chapter .delay-4.is-visible { transition-delay: 240ms; }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+  .story-chapter [data-reveal] {
+    transform: translateY(24px);
+    transition-duration: 600ms, 750ms;
+  }
+
+  .story-chapter [data-reveal].is-visible,
+  .story-chapter [data-reveal]:focus-within {
+    transform: none;
+  }
+}

@@ -59,6 +59,7 @@ const Contact = () => {
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
       setStatus('Please check the highlighted fields.');
+      event.currentTarget.elements.namedItem(Object.keys(nextErrors)[0])?.focus();
       return;
     }
 
@@ -136,12 +137,11 @@ const Contact = () => {
       </div>
 
       <div
-        data-reveal="up"
         className="mt-16 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-16 lg:pt-14"
       >
-        <div>
+        <div data-reveal="up">
           <p className="eyebrow">Send a message</p>
-          <h2 className="text-[clamp(2rem,3.5vw,4rem)] font-semibold leading-[1.05] tracking-tight">
+          <h2 className="text-[clamp(1.75rem,3vw,3.4rem)] font-semibold leading-[1.1] tracking-tight">
             Tell me what you are building — or who you are looking for.
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-7 text-gray-400 sm:text-base">
@@ -153,7 +153,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate className="space-y-5">
+        <form data-reveal="up" onSubmit={handleSubmit} noValidate className="space-y-5">
           <div>
             <label htmlFor="name" className="mb-2 block text-sm font-medium text-gray-200">
               Name
@@ -188,6 +188,9 @@ const Contact = () => {
               id="email"
               name="email"
               type="email"
+              inputMode="email"
+              autoCapitalize="none"
+              spellCheck={false}
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}

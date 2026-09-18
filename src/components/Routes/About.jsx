@@ -70,7 +70,7 @@ const About = () => {
       <div className="mt-20 lg:mt-28">
         <div data-reveal="up" className="max-w-4xl">
           <p className="eyebrow">Toolbox</p>
-          <h2 className="text-[clamp(2.2rem,4vw,4.7rem)] font-semibold leading-[1.02] tracking-tight">
+          <h2 className="text-[clamp(1.9rem,3.4vw,4rem)] font-semibold leading-[1.02] tracking-tight">
             What I use to turn ideas
             <span className="block text-gray-500">into working software.</span>
           </h2>
@@ -100,7 +100,7 @@ const About = () => {
       <div className="mt-20 lg:mt-28">
         <div data-reveal="up" className="max-w-4xl">
           <p className="eyebrow">Learning beyond the degree</p>
-          <h2 className="text-[clamp(2.2rem,4vw,4.7rem)] font-semibold leading-[1.02] tracking-tight">
+          <h2 className="text-[clamp(1.9rem,3.4vw,4rem)] font-semibold leading-[1.02] tracking-tight">
             Curiosity does not stop
             <span className="block text-gray-500">at the curriculum.</span>
           </h2>

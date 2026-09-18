@@ -34,7 +34,7 @@ const Hero = () => {
             software gave me the tools to build for them.
           </p>
 
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-7 grid gap-3 sm:mt-9 sm:flex sm:flex-wrap">
             <Link
               to="/projects"
               className="micro-button rounded-full bg-white px-6 py-3 text-sm font-medium text-black hover:bg-orange-200 sm:text-base"

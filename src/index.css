@@ -10,10 +10,11 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
 
   body {
-    @apply min-h-screen overflow-x-hidden bg-black text-white antialiased;
+    @apply min-h-screen overflow-x-clip bg-black text-white antialiased;
   }
 
   a,
@@ -57,7 +58,7 @@
   }
 
   .page-title {
-    font-size: clamp(2.2rem, 4vw, 5rem);
+    font-size: clamp(1.9rem, 3.5vw, 4.25rem);
     @apply font-semibold leading-[1.02] tracking-tight;
   }
 
@@ -103,8 +104,8 @@
   }
 
   .story-hero-title {
-    font-size: clamp(3.05rem, 7vw, 8.4rem);
-    line-height: 0.91;
+    font-size: clamp(2.5rem, 5.8vw, 6.8rem);
+    line-height: 0.98;
     letter-spacing: -0.055em;
     font-weight: 650;
   }
@@ -227,8 +228,8 @@
   .story-display {
     position: relative;
     z-index: 2;
-    font-size: clamp(2.8rem, 6.3vw, 7.6rem);
-    line-height: 0.96;
+    font-size: clamp(2.2rem, 5vw, 6rem);
+    line-height: 1.04;
     letter-spacing: -0.052em;
     font-weight: 620;
   }
@@ -253,8 +254,8 @@
   }
 
   .story-lead {
-    font-size: clamp(1.25rem, 2vw, 2rem);
-    line-height: 1.45;
+    font-size: clamp(1.125rem, 1.65vw, 1.65rem);
+    line-height: 1.55;
     letter-spacing: -0.02em;
     color: rgb(229 231 235);
   }
@@ -356,8 +357,8 @@
 
   .story-project-content h3 {
     max-width: 46rem;
-    font-size: clamp(1.9rem, 3.4vw, 4.2rem);
-    line-height: 1.03;
+    font-size: clamp(1.65rem, 2.8vw, 3.4rem);
+    line-height: 1.1;
     letter-spacing: -0.045em;
     font-weight: 600;
   }
@@ -579,7 +580,7 @@
   }
 
   .story-display-finale {
-    font-size: clamp(3.4rem, 9vw, 10rem);
+    font-size: clamp(2.5rem, 7vw, 7.5rem);
   }
 
   .story-ghost-word-finale {
@@ -643,7 +644,8 @@
     transform: translateX(14px);
   }
 
-  [data-reveal].is-visible {
+  [data-reveal].is-visible,
+  [data-reveal]:focus-within {
     opacity: 1;
     transform: none;
   }
@@ -654,6 +656,9 @@
   .delay-4 { transition-delay: 140ms; }
 
   .mobile-menu-panel {
+    max-height: calc(100dvh - 6rem - env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
     transform-origin: top center;
     animation: mobile-menu-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
@@ -713,16 +718,14 @@
   }
 
   .story-project {
-    grid-template-columns: 72px minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
     gap: clamp(1.5rem, 3vw, 3rem);
   }
 
   .story-project-meta {
-    align-self: stretch;
-    flex-direction: column;
+    grid-column: 1 / -1;
     justify-content: space-between;
-    align-items: flex-start;
   }
 
   .story-scroll-cue {
@@ -731,6 +734,17 @@
 }
 
 @media (min-width: 1024px) {
+  .story-project {
+    grid-template-columns: 72px minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  }
+
+  .story-project-meta {
+    grid-column: auto;
+    align-self: stretch;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .story-hero-grid {
     grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
   }
@@ -747,6 +761,89 @@
 
   .story-principles {
     margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-gutter,
+  .page-shell,
+  .story-section {
+    padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+  }
+
+  .story-hero {
+    padding-block: 2.5rem;
+  }
+
+  .story-hero-title {
+    font-size: clamp(2.15rem, 10.25vw, 3.5rem);
+  }
+
+  .story-grid,
+  .story-hero-grid {
+    gap: 2.25rem;
+  }
+
+  .story-milestone-topline {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    letter-spacing: 0.12em;
+  }
+
+  .story-ghost-word {
+    font-size: clamp(4rem, 19vw, 7rem);
+  }
+
+  .story-fact {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .story-principle {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    column-gap: 0.75rem;
+  }
+
+  .story-finale {
+    border-radius: 1.5rem;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .story-display-finale {
+    font-size: clamp(2.1rem, 8vw, 3.5rem);
+  }
+
+  .story-text-link,
+  .micro-button:not(.hidden),
+  #mobile-navigation .nav-link,
+  footer nav a,
+  footer nav button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #mobile-navigation .nav-link {
+    justify-content: flex-start;
+  }
+
+  .micro-button {
+    text-align: center;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+    scroll-margin-block: 6rem 2rem;
+  }
+
+  .page-shell h1,
+  .page-shell h2,
+  .story-project-content h3 {
+    overflow-wrap: anywhere;
   }
 }
 

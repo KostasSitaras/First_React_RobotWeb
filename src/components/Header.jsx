@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const navigation = [
@@ -11,6 +11,43 @@ const navigation = [
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const headerRef = useRef(null);
+  const menuButtonRef = useRef(null);
+  const closeTimerRef = useRef(null);
+
+  useEffect(() => () => window.clearTimeout(closeTimerRef.current), []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const dismiss = () => {
+      window.clearTimeout(closeTimerRef.current);
+      setIsOpen(false);
+      setIsClosing(false);
+    };
+    const handleKey = (event) => {
+      if (event.key === 'Escape') {
+        dismiss();
+        menuButtonRef.current?.focus();
+      }
+    };
+    const handleOutside = (event) => {
+      if (!headerRef.current?.contains(event.target)) dismiss();
+    };
+    const desktop = window.matchMedia('(min-width: 768px)');
+    const handleBreakpoint = (event) => {
+      if (event.matches) dismiss();
+    };
+
+    document.addEventListener('keydown', handleKey);
+    document.addEventListener('pointerdown', handleOutside);
+    desktop.addEventListener('change', handleBreakpoint);
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.removeEventListener('pointerdown', handleOutside);
+      desktop.removeEventListener('change', handleBreakpoint);
+    };
+  }, [isOpen]);
 
   const linkClasses = ({ isActive }) =>
     `nav-link text-sm tracking-[0.18em] uppercase ${
@@ -18,6 +55,7 @@ const Header = () => {
     }`;
 
   const openMenu = () => {
+    window.clearTimeout(closeTimerRef.current);
     setIsClosing(false);
     setIsOpen(true);
   };
@@ -34,7 +72,7 @@ const Header = () => {
     }
 
     setIsClosing(true);
-    window.setTimeout(() => {
+    closeTimerRef.current = window.setTimeout(() => {
       setIsOpen(false);
       setIsClosing(false);
     }, 180);
@@ -51,8 +89,8 @@ const Header = () => {
   const cvPath = `${import.meta.env.BASE_URL}Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf`;
 
   return (
-    <header className="site-gutter sticky top-0 z-[100] flex w-full items-center justify-between border-b border-white/[0.06] bg-black/95 py-5 lg:py-6">
-      <NavLink to="/" className="brand-link text-xl font-semibold tracking-[0.18em] sm:text-2xl" aria-label="KCODE home">
+    <header ref={headerRef} className="site-gutter sticky top-0 z-[100] flex w-full items-center justify-between border-b border-white/[0.06] bg-black/95 py-3 md:py-5 lg:py-6">
+      <NavLink to="/" onClick={closeMenu} className="brand-link text-xl font-semibold tracking-[0.18em] sm:text-2xl" aria-label="KCODE home">
         KCODE<span className="text-orange-300">.</span>
       </NavLink>
 
@@ -74,8 +112,9 @@ const Header = () => {
       </a>
 
       <button
+        ref={menuButtonRef}
         type="button"
-        className={`rounded-lg border p-2 text-2xl transition-all duration-200 md:hidden ${
+        className={`min-h-11 min-w-11 rounded-lg border p-2 text-2xl transition-colors duration-200 md:hidden ${
           isOpen && !isClosing ? 'border-orange-200/40 bg-white/10' : 'border-white/15'
         }`}
         onClick={toggleMenu}
@@ -93,11 +132,11 @@ const Header = () => {
 
       {isOpen && (
         <div
-          className={`mobile-menu-panel absolute left-4 right-4 top-20 z-50 rounded-2xl border border-white/10 bg-black/95 p-6 shadow-xl md:hidden ${
+          className={`mobile-menu-panel absolute left-4 right-4 top-full z-50 mt-2 rounded-2xl border border-white/10 bg-black p-5 shadow-xl md:hidden ${
             isClosing ? 'is-closing' : ''
           }`}
         >
-          <nav id="mobile-navigation" className="flex flex-col gap-5" aria-label="Mobile navigation">
+          <nav id="mobile-navigation" className="flex flex-col gap-2" aria-label="Mobile navigation">
             {navigation.map((item, index) => (
               <NavLink
                 key={item.to}
