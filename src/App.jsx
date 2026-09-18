@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import AnalyticsConsent from './components/AnalyticsConsent';
 import SEO from './components/SEO';
-import Hero from './components/Hero';
+import Home from './components/Routes/Home';
 
 const About = lazy(() => import('./components/Routes/About'));
 const Projects = lazy(() => import('./components/Routes/Projects'));
@@ -49,8 +49,8 @@ export default function App() {
         });
       },
       {
-        threshold: 0.16,
-        rootMargin: '-3% 0px -7% 0px',
+        threshold: 0.13,
+        rootMargin: '-2% 0px -8% 0px',
       },
     );
 
@@ -64,9 +64,6 @@ export default function App() {
 
     observeRevealElements();
 
-    // Lazy-loaded routes may mount after this effect has already run.
-    // Watch for newly inserted reveal elements so a direct reload on /about,
-    // /projects, etc. still initializes their animations correctly.
     const mutationObserver = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {
@@ -100,7 +97,7 @@ export default function App() {
       <main id="main-content" className="flex-1" tabIndex="-1">
         <Suspense fallback={<PageLoader />}>
           <Routes>
-            <Route path="/" element={<Hero />} />
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
