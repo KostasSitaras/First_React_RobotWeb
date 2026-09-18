@@ -80,24 +80,30 @@ const Contact = () => {
 
   return (
     <section className="page-shell">
-      <div data-reveal="up" className="max-w-4xl">
-        <p className="eyebrow">Contact</p>
-        <h1 className="page-title">Let’s build something useful.</h1>
-        <p className="page-copy">
-          I am currently open to junior software engineering, front-end and full-stack
-          opportunities in Thessaloniki or remote. You can contact me directly by email,
-          LinkedIn or through the form below.
+      <div data-reveal="up" className="max-w-6xl">
+        <p className="eyebrow">Contact / The next chapter</p>
+        <h1 className="page-title max-w-5xl">
+          Good opportunities usually
+          <span className="block text-gray-500">start with a conversation.</span>
+        </h1>
+        <p className="page-copy max-w-3xl">
+          I am open to junior software engineering, front-end and full-stack opportunities
+          in Thessaloniki or remote. If you have a role, project or idea that could be a good
+          fit, I would be glad to hear about it.
         </p>
       </div>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-3 lg:gap-6">
+      <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-3">
         <a
           data-reveal="up"
           href="mailto:kostassitaras1@gmail.com?subject=Portfolio%20Contact"
-          className="content-card delay-1 transition hover:-translate-y-1 hover:border-white/25"
+          className="group bg-black p-6 transition hover:bg-white/[0.04] sm:p-7"
         >
-          <p className="text-xs uppercase tracking-[0.18em] text-gray-500 sm:text-sm">Email</p>
-          <p className="mt-3 break-all text-base sm:text-lg">kostassitaras1@gmail.com</p>
+          <div className="flex items-start justify-between gap-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-gray-500">Email</p>
+            <span className="text-gray-600 transition group-hover:text-orange-200" aria-hidden="true">↗</span>
+          </div>
+          <p className="mt-7 break-all text-base sm:text-lg">kostassitaras1@gmail.com</p>
         </a>
 
         <a
@@ -105,10 +111,13 @@ const Contact = () => {
           href="https://www.linkedin.com/in/konstantinos-sitaras-731407253/"
           target="_blank"
           rel="noreferrer"
-          className="content-card delay-2 transition hover:-translate-y-1 hover:border-white/25"
+          className="group bg-black p-6 transition hover:bg-white/[0.04] sm:p-7 delay-1"
         >
-          <p className="text-xs uppercase tracking-[0.18em] text-gray-500 sm:text-sm">LinkedIn</p>
-          <p className="mt-3 text-base sm:text-lg">Connect professionally ↗</p>
+          <div className="flex items-start justify-between gap-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-gray-500">LinkedIn</p>
+            <span className="text-gray-600 transition group-hover:text-orange-200" aria-hidden="true">↗</span>
+          </div>
+          <p className="mt-7 text-base sm:text-lg">Connect professionally</p>
         </a>
 
         <a
@@ -116,25 +125,30 @@ const Contact = () => {
           href="https://github.com/KostasSitaras"
           target="_blank"
           rel="noreferrer"
-          className="content-card delay-3 transition hover:-translate-y-1 hover:border-white/25"
+          className="group bg-black p-6 transition hover:bg-white/[0.04] sm:p-7 delay-2"
         >
-          <p className="text-xs uppercase tracking-[0.18em] text-gray-500 sm:text-sm">GitHub</p>
-          <p className="mt-3 text-base sm:text-lg">View my code ↗</p>
+          <div className="flex items-start justify-between gap-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-gray-500">GitHub</p>
+            <span className="text-gray-600 transition group-hover:text-orange-200" aria-hidden="true">↗</span>
+          </div>
+          <p className="mt-7 text-base sm:text-lg">Explore my code</p>
         </a>
       </div>
 
       <div
         data-reveal="up"
-        className="content-card mt-8 grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12"
+        className="mt-16 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-16 lg:pt-14"
       >
         <div>
           <p className="eyebrow">Send a message</p>
-          <h2 className="mt-3 text-2xl font-semibold sm:text-3xl">Get in touch directly.</h2>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-gray-400 sm:text-base">
-            Have a role, project or collaboration in mind? Leave your details and a short
-            message. The form will prepare an email addressed directly to me.
+          <h2 className="text-[clamp(2rem,3.5vw,4rem)] font-semibold leading-[1.05] tracking-tight">
+            Tell me what you are building — or who you are looking for.
+          </h2>
+          <p className="mt-5 max-w-xl text-sm leading-7 text-gray-400 sm:text-base">
+            Leave your details and a short message. The form prepares an email addressed
+            directly to me, so you stay in control of what is sent.
           </p>
-          <p className="mt-5 text-sm leading-6 text-gray-500">
+          <p className="mt-5 text-sm leading-6 text-gray-600">
             Your information is not stored by this website.
           </p>
         </div>
@@ -153,7 +167,7 @@ const Contact = () => {
               onChange={handleChange}
               aria-invalid={Boolean(errors.name)}
               aria-describedby={errors.name ? 'name-error' : undefined}
-              className={`w-full rounded-2xl border bg-black/30 px-4 py-3 text-white outline-none transition placeholder:text-gray-600 focus:border-orange-200/60 ${
+              className={`w-full rounded-2xl border bg-white/[0.025] px-4 py-3 text-white outline-none transition placeholder:text-gray-600 focus:border-orange-200/60 ${
                 errors.name ? 'border-red-400/70' : 'border-white/10'
               }`}
               placeholder="Your name"
@@ -179,7 +193,7 @@ const Contact = () => {
               onChange={handleChange}
               aria-invalid={Boolean(errors.email)}
               aria-describedby={errors.email ? 'email-error' : undefined}
-              className={`w-full rounded-2xl border bg-black/30 px-4 py-3 text-white outline-none transition placeholder:text-gray-600 focus:border-orange-200/60 ${
+              className={`w-full rounded-2xl border bg-white/[0.025] px-4 py-3 text-white outline-none transition placeholder:text-gray-600 focus:border-orange-200/60 ${
                 errors.email ? 'border-red-400/70' : 'border-white/10'
               }`}
               placeholder="you@example.com"
@@ -199,12 +213,12 @@ const Contact = () => {
             <textarea
               id="message"
               name="message"
-              rows={6}
+              rows={7}
               value={formData.message}
               onChange={handleChange}
               aria-invalid={Boolean(errors.message)}
               aria-describedby={errors.message ? 'message-error' : undefined}
-              className={`w-full resize-y rounded-2xl border bg-black/30 px-4 py-3 text-white outline-none transition placeholder:text-gray-600 focus:border-orange-200/60 ${
+              className={`w-full resize-y rounded-2xl border bg-white/[0.025] px-4 py-3 text-white outline-none transition placeholder:text-gray-600 focus:border-orange-200/60 ${
                 errors.message ? 'border-red-400/70' : 'border-white/10'
               }`}
               placeholder="Tell me a little about the opportunity or project…"
