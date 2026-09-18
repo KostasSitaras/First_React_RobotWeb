@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kostassitaras.github.io/First_React_RobotWeb/sitemap.xml

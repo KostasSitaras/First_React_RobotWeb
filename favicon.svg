@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KCODE favicon">
+  <rect width="64" height="64" rx="14" fill="#000000"/>
+  <path d="M16 13h7v38h-7z" fill="#ffffff"/>
+  <path d="M23 32 39 13h9L31 32l18 19h-10L23 33z" fill="#ffffff"/>
+  <circle cx="50" cy="47" r="5" fill="#fdba74"/>
+</svg>
