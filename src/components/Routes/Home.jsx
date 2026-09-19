@@ -124,11 +124,39 @@ const Home = () => {
                 <span>2025 — 2026</span>
                 <span>Beyond the curriculum</span>
               </div>
-              <h3>Exploring applied AI</h3>
+              <h3>Introduction to Artificial Intelligence</h3>
               <p>
-                Google Built with AI and the Founderz · YMCA Introduction to Artificial
-                Intelligence program added hands-on exposure to Gemini, Google Colab,
-                generative AI workflows and practical AI concepts.
+                Completed the Founderz · YMCA Introduction to Artificial Intelligence program, 
+                gaining a structured introduction to AI fundamentals, 
+                practical applications and the ways artificial intelligence 
+                can be used to support real-world problem solving.
+              </p>
+            </div>
+
+            <div data-reveal="up" className="pt-2 delay-2">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-gray-500">
+                Tools I Understood and Built With During My Studies
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['Gemini', 'Google Colab', 'ChatGPT', 'Git'].map((item) => (
+                  <span key={item} className="skill-chip">{item}</span>
+                ))}
+              </div>
+               <br /> 
+            </div>
+            
+
+            <div data-reveal="up" className="story-milestone delay-1">
+              <div className="story-milestone-topline">
+                <span>2025 — 2026</span>
+                <span>Beyond the curriculum</span>
+              </div>
+              <h3>Built with AI</h3>
+              <p>
+                Participated in Google’s Built with AI program, 
+                working with Google Gemini and Google Colab to explore 
+                generative AI workflows, prompt engineering and the development 
+                of practical AI-powered solutions in a cloud-based environment.
               </p>
             </div>
 

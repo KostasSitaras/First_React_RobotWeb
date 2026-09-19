@@ -20,7 +20,7 @@ const projects = [
   {
     number: '02',
     title: 'Airbnb Property Management',
-    status: 'In development',
+    status: 'WIP',
     statement: 'One dashboard for a workflow that usually lives in too many places.',
     intro:
       'Short-term rental operations involve listings, reservations, guests, availability and day-to-day decisions. The project starts from that operational problem and turns it into a single full-stack application.',
@@ -39,6 +39,7 @@ const ProjectVisual = ({ type }) => {
   if (type === 'dashboard') {
     return (
       <div className="story-project-visual story-dashboard min-h-[320px]" aria-hidden="true">
+        
         <div className="story-dashboard-sidebar">
           <span className="story-dashboard-logo" />
           <span /><span /><span /><span />
