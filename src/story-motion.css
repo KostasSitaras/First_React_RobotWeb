@@ -10,6 +10,15 @@ html.story-motion-enabled {
   padding-block: clamp(5rem, 8vw, 8rem);
 }
 
+.story-ghost-word {
+  pointer-events: none;
+}
+
+.story-finale > :not(.story-ghost-word) {
+  position: relative;
+  z-index: 1;
+}
+
 @media (max-width: 767px) {
   .story-chapter.story-section {
     padding-block: 3.5rem;
