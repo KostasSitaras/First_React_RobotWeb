@@ -2,12 +2,73 @@ html.story-motion-enabled {
   scroll-padding-top: var(--story-header-height, 5.5rem);
 }
 
+.page-shell.chapter-page {
+  padding-block: 0;
+}
+
+.page-chapter {
+  min-height: calc(100svh - var(--story-header-height, 5.5rem));
+  display: flex;
+  align-items: center;
+  padding-block: clamp(2rem, 5svh, 4rem);
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.page-chapter:last-child {
+  border-bottom: 0;
+}
+
 .story-intro .story-hero {
   min-height: calc(100svh - var(--story-header-height, 5.5rem));
+  padding-block: clamp(1.5rem, 3svh, 2.5rem);
+}
+
+/* Size the desktop introduction against height as well as width. */
+@media (min-width: 1024px) {
+  .story-intro .story-hero-title {
+    font-size: clamp(2.25rem, min(5.8vw, 7svh), 6rem);
+  }
+
+  .story-intro .story-hero-status,
+  .story-intro .story-hero-name {
+    margin-bottom: clamp(0.5rem, 1.5svh, 1.25rem);
+  }
+
+  .story-intro .story-hero-description,
+  .story-intro .story-hero-actions,
+  .story-intro .story-hero-technologies {
+    margin-top: clamp(0.75rem, 2svh, 1.5rem);
+  }
+
+  .story-intro .story-hero-description {
+    font-size: clamp(1rem, 1.9svh, 1.125rem);
+    line-height: 1.6;
+  }
+
+  .story-intro .story-hero-side {
+    align-self: center;
+    margin-top: 0;
+  }
 }
 
 .story-chapter.story-section {
+  /* Grow with long content so every paragraph remains reachable. */
+  min-height: calc(100svh - var(--story-header-height, 5.5rem));
+  display: grid;
+  align-content: center;
   padding-block: clamp(5rem, 8vw, 8rem);
+}
+
+.story-chapter.story-outro {
+  padding-block: clamp(1.25rem, 3svh, 2.5rem);
+}
+
+.story-outro .story-finale {
+  padding-block: clamp(2rem, 5svh, 4rem);
+}
+
+.story-outro .story-display-finale {
+  font-size: clamp(2.1rem, min(7vw, 10svh), 7.5rem);
 }
 
 .story-ghost-word {
@@ -20,8 +81,64 @@ html.story-motion-enabled {
 }
 
 @media (max-width: 767px) {
-  .story-chapter.story-section {
-    padding-block: 3.5rem;
+  .page-chapter > *,
+  .story-grid > *,
+  .story-hero-grid > * {
+    min-width: 0;
+  }
+
+  .page-chapter {
+    padding-block: 2rem;
+  }
+
+  .story-intro .story-hero-status,
+  .story-intro .story-hero-name {
+    margin-bottom: 1.25rem;
+  }
+
+  .story-intro .story-hero-description,
+  .story-intro .story-hero-actions,
+  .story-intro .story-hero-technologies {
+    margin-top: 1.25rem;
+  }
+
+  .story-intro .story-hero-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+  }
+
+  .story-intro .story-hero-side {
+    margin-top: 0;
+    max-width: none;
+  }
+
+  .story-intro .story-hero-description {
+    line-height: 1.65;
+  }
+
+  .story-project-visual {
+    min-height: 220px;
+  }
+
+  .story-project-visual .story-browser-body {
+    min-height: 180px;
+  }
+
+  .story-outro .story-finale {
+    padding: 2rem 1rem;
+  }
+
+  .story-outro .story-lead {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .story-outro .micro-button {
+    width: 100%;
+  }
+
+  .story-chapter.story-section:not(.story-outro) {
+    padding-block: 2.5rem;
   }
 }
 

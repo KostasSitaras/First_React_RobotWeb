@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const navigation = [
   { label: 'Home', to: '/' },
@@ -9,6 +9,7 @@ const navigation = [
 ];
 
 const Header = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const headerRef = useRef(null);
@@ -86,17 +87,30 @@ const Header = () => {
     }
   };
 
+  const handleNavigation = (event, destination) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    closeMenu();
+    if (destination === location.pathname) {
+      event.preventDefault();
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+      });
+    }
+  };
+
   const cvPath = `${import.meta.env.BASE_URL}Sitaras_Konstantinos_Junior_Software_Engineer_CV.pdf`;
 
   return (
     <header ref={headerRef} className="site-gutter sticky top-0 z-[100] flex w-full items-center justify-between border-b border-white/[0.06] bg-black/95 py-3 md:py-5 lg:py-6">
-      <NavLink to="/" onClick={closeMenu} className="brand-link text-xl font-semibold tracking-[0.18em] sm:text-2xl" aria-label="KCODE home">
+      <NavLink to="/" onClick={(event) => handleNavigation(event, '/')} className="brand-link text-xl font-semibold tracking-[0.18em] sm:text-2xl" aria-label="KCODE home">
         KCODE<span className="text-orange-300">.</span>
       </NavLink>
 
       <nav className="hidden items-center gap-7 md:flex lg:gap-9" aria-label="Main navigation">
         {navigation.map((item) => (
-          <NavLink key={item.to} to={item.to} className={linkClasses}>
+          <NavLink key={item.to} to={item.to} className={linkClasses} onClick={(event) => handleNavigation(event, item.to)}>
             {item.label}
           </NavLink>
         ))}
@@ -143,7 +157,7 @@ const Header = () => {
                 to={item.to}
                 className={({ isActive }) => `${linkClasses({ isActive })} mobile-menu-item`}
                 style={{ animationDelay: `${60 + index * 55}ms` }}
-                onClick={closeMenu}
+                onClick={(event) => handleNavigation(event, item.to)}
               >
                 {item.label}
               </NavLink>

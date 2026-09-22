@@ -24,7 +24,11 @@ export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+    });
 
     const getRevealElements = (root = document) =>
       Array.from(root.querySelectorAll?.('[data-reveal]') ?? []);
@@ -42,7 +46,7 @@ export default function App() {
       return () => fallbackMutationObserver.disconnect();
     }
 
-    const isStory = location.pathname === '/';
+    const isStory = ['/', '/about', '/projects', '/contact'].includes(location.pathname);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

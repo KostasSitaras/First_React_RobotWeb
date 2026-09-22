@@ -1,3 +1,5 @@
+import ChapterPage, { Chapter } from '../ChapterPage';
+
 const skillGroups = [
   { title: 'Languages', items: ['JavaScript', 'Java', 'Python', 'C', 'SQL'] },
   { title: 'Front end', items: ['React', 'HTML5', 'CSS3', 'Tailwind CSS'] },
@@ -28,7 +30,8 @@ const chapters = [
 
 const About = () => {
   return (
-    <section className="page-shell">
+    <ChapterPage>
+      <Chapter label="About — introduction">
       <div data-reveal="up" className="max-w-6xl">
         <p className="eyebrow">About / The longer version</p>
         <h1 className="page-title max-w-5xl">
@@ -42,12 +45,14 @@ const About = () => {
         </p>
       </div>
 
-      <div className="mt-16 border-t border-white/10 lg:mt-24">
+      </Chapter>
+
+      <div>
         {chapters.map((chapter, index) => (
+          <Chapter key={chapter.number} label={chapter.label}>
           <article
-            key={chapter.number}
             data-reveal="up"
-            className={`grid gap-6 border-b border-white/10 py-10 md:grid-cols-[90px_minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-8 lg:py-14 delay-${Math.min(index + 1, 4)}`}
+            className={`grid gap-6 md:grid-cols-[90px_minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-8 delay-${Math.min(index + 1, 4)}`}
           >
             <div className="text-xs font-medium uppercase tracking-[0.2em] text-gray-600">
               {chapter.number}
@@ -64,10 +69,11 @@ const About = () => {
               {chapter.text}
             </p>
           </article>
+          </Chapter>
         ))}
       </div>
 
-      <div className="mt-20 lg:mt-28">
+      <Chapter label="Toolbox">
         <div data-reveal="up" className="max-w-4xl">
           <p className="eyebrow">Toolbox</p>
           <h2 className="text-[clamp(1.9rem,3.4vw,4rem)] font-semibold leading-[1.02] tracking-tight">
@@ -95,9 +101,9 @@ const About = () => {
             </article>
           ))}
         </div>
-      </div>
+      </Chapter>
 
-      <div className="mt-20 lg:mt-28">
+      <Chapter label="Learning beyond the degree">
         <div data-reveal="up" className="max-w-4xl">
           <p className="eyebrow">Learning beyond the degree</p>
           <h2 className="text-[clamp(1.9rem,3.4vw,4rem)] font-semibold leading-[1.02] tracking-tight">
@@ -153,8 +159,8 @@ const About = () => {
             </div>
           </article>
         </div>
-      </div>
-    </section>
+      </Chapter>
+    </ChapterPage>
   );
 };
 

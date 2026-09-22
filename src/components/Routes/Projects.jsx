@@ -1,3 +1,5 @@
+import ChapterPage, { Chapter } from '../ChapterPage';
+
 const projects = [
   {
     number: '01',
@@ -78,7 +80,8 @@ const ProjectVisual = ({ type }) => {
 
 const Projects = () => {
   return (
-    <section className="page-shell">
+    <ChapterPage>
+      <Chapter label="Projects — introduction">
       <div data-reveal="up" className="max-w-6xl">
         <p className="eyebrow">Selected work / Case studies</p>
         <h1 className="page-title max-w-5xl">
@@ -91,10 +94,13 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className="mt-16 space-y-24 lg:mt-24 lg:space-y-32">
+      </Chapter>
+
+      <div>
         {projects.map((project, index) => (
           <article key={project.title}>
-            <div data-reveal="up" className={`grid gap-8 border-t border-white/10 pt-7 lg:grid-cols-[90px_minmax(0,1fr)] lg:gap-10 delay-${Math.min(index + 1, 4)}`}>
+            <Chapter label={`${project.title} — overview`}>
+            <div data-reveal="up" className={`grid gap-8 lg:grid-cols-[90px_minmax(0,1fr)] lg:gap-10 delay-${Math.min(index + 1, 4)}`}>
               <div className="flex items-start justify-between gap-4 lg:block">
                 <span className="text-xs font-medium uppercase tracking-[0.2em] text-gray-600">
                   {project.number}
@@ -117,7 +123,10 @@ const Projects = () => {
               </div>
             </div>
 
-            <div data-reveal="up" className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-10">
+            </Chapter>
+
+            <Chapter label={`${project.title} — case study`}>
+            <div data-reveal="up" className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-10">
               <ProjectVisual type={project.type} />
 
               <div className="grid content-start gap-0">
@@ -136,7 +145,7 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-6 border-b border-white/10 pb-10 sm:flex-row sm:items-end sm:justify-between">
+            <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((technology) => (
                   <span key={technology} className="skill-chip">{technology}</span>
@@ -158,10 +167,11 @@ const Projects = () => {
                 </div>
               )}
             </div>
+            </Chapter>
           </article>
         ))}
       </div>
-    </section>
+    </ChapterPage>
   );
 };
 

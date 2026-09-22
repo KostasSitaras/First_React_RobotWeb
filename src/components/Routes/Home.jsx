@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../Hero';
+import useChapterSnap from '../../useChapterSnap';
 import '../../story-motion.css';
 
 const principles = [
@@ -27,26 +27,7 @@ const principles = [
 ];
 
 const Home = () => {
-  useEffect(() => {
-    const root = document.documentElement;
-    const header = document.querySelector('header');
-    const updateHeaderHeight = () => {
-      if (header) {
-        root.style.setProperty('--story-header-height', `${header.getBoundingClientRect().height}px`);
-      }
-    };
-
-    updateHeaderHeight();
-    root.classList.add('story-motion-enabled');
-    const headerObserver = new ResizeObserver(updateHeaderHeight);
-    if (header) headerObserver.observe(header);
-
-    return () => {
-      headerObserver.disconnect();
-      root.classList.remove('story-motion-enabled');
-      root.style.removeProperty('--story-header-height');
-    };
-  }, []);
+  useChapterSnap();
 
   return (
     <>
@@ -302,7 +283,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="story-section story-chapter" aria-labelledby="next-title">
+      <section className="story-section story-chapter story-outro" aria-labelledby="next-title">
         <div data-reveal="up" className="story-finale">
           <p className="story-kicker">05 / Next</p>
           <p className="story-ghost-word story-ghost-word-finale" aria-hidden="true">NEXT</p>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterPage, { Chapter } from '../ChapterPage';
 
 const initialForm = {
   name: '',
@@ -80,7 +81,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="page-shell">
+    <ChapterPage>
+      <Chapter label="Contact — get in touch">
       <div data-reveal="up" className="max-w-6xl">
         <p className="eyebrow">Contact / The next chapter</p>
         <h1 className="page-title max-w-5xl">
@@ -136,8 +138,10 @@ const Contact = () => {
         </a>
       </div>
 
+      </Chapter>
+      <Chapter label="Send a message">
       <div
-        className="mt-16 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-16 lg:pt-14"
+        className="grid gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-16"
       >
         <div data-reveal="up">
           <p className="eyebrow">Send a message</p>
@@ -259,7 +263,8 @@ const Contact = () => {
           </div>
         </form>
       </div>
-    </section>
+      </Chapter>
+    </ChapterPage>
   );
 };
 
