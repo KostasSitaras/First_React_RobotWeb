@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import './index.css';
 import App from './App.jsx';
+import SplashIntro from './components/SplashIntro.jsx';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -41,7 +42,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ErrorBoundary>
       <HashRouter>
-        <App />
+        <SplashIntro>
+          <App />
+        </SplashIntro>
       </HashRouter>
     </ErrorBoundary>
   </StrictMode>,
