@@ -1,0 +1,1 @@
+import{u as r,j as e}from"./index-DqR4WVAd.js";function p({children:a,label:s}){return e.jsx("section",{className:"story-chapter page-chapter","aria-label":s,children:e.jsx("div",{className:"w-full",children:a})})}function c({children:a}){return r(),e.jsx("div",{className:"page-shell chapter-page",children:a})}export{c as C,p as a};
