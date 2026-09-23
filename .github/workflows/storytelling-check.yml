@@ -26,5 +26,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check code and behavior
+        run: |
+          npm run lint
+          npm test
+
       - name: Build portfolio
         run: npm run build

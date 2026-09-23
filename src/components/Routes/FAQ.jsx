@@ -22,7 +22,7 @@ const faqs = [
   {
     question: 'What is the best way to contact you?',
     answer:
-      'Email is the fastest option. You can also connect with me through LinkedIn or review my work on GitHub from the Contact page.',
+      'Use the form on the Contact page to send me a message directly, without opening an email app. I will reply by email. You can also connect with me through LinkedIn.',
   },
 ];
 
@@ -44,10 +44,10 @@ const FAQ = () => {
             data-reveal="up"
             className={`content-card group delay-${Math.min(index + 1, 4)}`}
           >
-            <summary className="cursor-pointer list-none pr-8 text-lg font-semibold marker:hidden">
-              <span className="flex items-center justify-between gap-4">
-                {faq.question}
-                <span aria-hidden="true" className="text-orange-200 transition-transform group-open:rotate-45">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center text-base font-semibold marker:hidden sm:text-lg">
+              <span className="flex w-full items-center justify-between gap-4">
+                <span className="min-w-0">{faq.question}</span>
+                <span aria-hidden="true" className="shrink-0 text-orange-200 transition-transform group-open:rotate-45 motion-reduce:transition-none">
                   +
                 </span>
               </span>

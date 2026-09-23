@@ -88,7 +88,8 @@ export default function useChapterSnap() {
     };
     const onKey = (event) => {
       if (event.target instanceof Element && event.target.closest('input, textarea, select, [contenteditable="true"]')) return;
-      if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' '].includes(event.key)) onInput();
+      if (event.target instanceof Element && event.target.closest('button, a, summary, [role="dialog"]')) return;
+      if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' '].includes(event.key)) onInput(event);
       else {
         cancel();
         userScrolling = false;

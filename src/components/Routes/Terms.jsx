@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Terms = () => {
   return (
     <section className="page-shell">
@@ -63,9 +65,9 @@ const Terms = () => {
             <h2 className="text-xl font-semibold text-white">7. Contact</h2>
             <p className="mt-3 text-gray-400">
               Questions about these terms can be sent to{' '}
-              <a className="project-link" href="mailto:kostassitaras1@gmail.com">
+              <Link className="project-link" to="/contact">
                 kostassitaras1@gmail.com
-              </a>.
+              </Link>.
             </p>
           </section>
         </div>

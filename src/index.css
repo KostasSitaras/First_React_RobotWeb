@@ -112,18 +112,17 @@
     font-weight: 650;
   }
 
-.story-hero-side {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 520px;
-  justify-self: end;
-  align-self: center;
-  border-top: 1px solid rgb(255 255 255 / 0.14);
-  padding-top: 1.25rem;
-  align-self: start;
-  margin-top: 4rem;
-}
+  .story-hero-side {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 520px;
+    justify-self: end;
+    align-self: start;
+    border-top: 1px solid rgb(255 255 255 / 0.14);
+    padding-top: 1.25rem;
+    margin-top: 4rem;
+  }
 
   .story-hero-side-top,
   .story-milestone-topline,
@@ -857,6 +856,7 @@
 
   .page-shell h1,
   .page-shell h2,
+  .page-shell .project-link,
   .story-project-content h3 {
     overflow-wrap: anywhere;
   }

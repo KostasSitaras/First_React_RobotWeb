@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 const PrivacyPolicy = () => {
   return (
     <section className="page-shell">
       <div data-reveal="up" className="max-w-4xl">
         <p className="eyebrow">Privacy</p>
         <h1 className="page-title">Privacy Policy</h1>
-        <p className="page-copy">Last updated: 4 September 2026</p>
+        <p className="page-copy">Last updated: 23 September 2026</p>
 
         <div className="content-card mt-10 space-y-8 leading-7 text-gray-300">
           <section>
@@ -57,6 +59,14 @@ const PrivacyPolicy = () => {
               If you select “Reject”, Google Analytics is not loaded by this portfolio. Your
               preference is stored locally in your browser so the website can remember your
               choice. You can reopen the analytics preferences at any time from the footer.
+              Choosing “Reject analytics” there stops further analytics collection and clears
+              accessible Google Analytics cookies for this site. The change also applies to
+              other open tabs in the same browser.
+            </p>
+            <p className="mt-3 text-gray-400">
+              A separate session storage flag remembers whether the KCODE. intro has played
+              in the current tab. It is not used for tracking. If browser storage is blocked,
+              preferences may not persist after a reload.
             </p>
           </section>
 
@@ -80,9 +90,10 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-xl font-semibold text-white">5. Contact</h2>
             <p className="mt-3 text-gray-400">
-              The portfolio displays an email address so visitors can contact Konstantinos
-              Sitaras directly. If you send an email, the information you choose to include is
-              processed for the purpose of responding to your message.
+              When you submit the contact form, your name, email address and message are sent
+              to Web3Forms to deliver your enquiry by email to Konstantinos Sitaras. This
+              information is used to respond to your message. You can also use the email
+              address displayed on the website to make contact directly.
             </p>
           </section>
 
@@ -91,7 +102,7 @@ const PrivacyPolicy = () => {
             <p className="mt-3 text-gray-400">
               Personal information is not sold through this website. When analytics is accepted,
               Google acts as the analytics service provider. GitHub provides the website hosting
-              infrastructure.
+              infrastructure. Web3Forms provides delivery of contact form submissions.
             </p>
           </section>
 
@@ -108,9 +119,9 @@ const PrivacyPolicy = () => {
             <h2 className="text-xl font-semibold text-white">8. Privacy questions</h2>
             <p className="mt-3 text-gray-400">
               For questions about this website or its privacy practices, contact{' '}
-              <a className="project-link" href="mailto:kostassitaras1@gmail.com">
+              <Link className="project-link" to="/contact">
                 kostassitaras1@gmail.com
-              </a>.
+              </Link>.
             </p>
           </section>
         </div>
